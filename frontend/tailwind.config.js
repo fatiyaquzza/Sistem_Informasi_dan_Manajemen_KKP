@@ -6,12 +6,13 @@ module.exports = {
       fontFamily: {
         Cinzel: ["Cinzel"],
         Lato: ["Lato"],
+        Poppins: ["Poppins"],
       },
       colors: {
         primarywhite: "#F8F8F8",
         softgray: "#EEEDF0",
         brown: "#7F3D28",
-        black2 :"#101010"
+        black2: "#101010",
       },
     },
   },
