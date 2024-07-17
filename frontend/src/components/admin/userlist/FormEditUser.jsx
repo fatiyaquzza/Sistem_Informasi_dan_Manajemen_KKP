@@ -5,11 +5,6 @@ import "bulma/css/bulma.css";
 
 const FormEditUser = () => {
   const [name, setName] = useState("");
-  const [nip, setNIP] = useState("");
-  const [cutiBersama, setCutiBersama] = useState(0);
-  const [sisacuti, setSisaCuti] = useState(0);
-  const [sisacuti1, setSisaCuti1] = useState(0);
-  const [sisacuti2, setSisaCuti2] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
@@ -23,11 +18,6 @@ const FormEditUser = () => {
       try {
         const response = await axios.get(`http://localhost:5000/users/${id}`);
         setName(response.data.name);
-        setNIP(response.data.nip);
-        setCutiBersama(response.data.cutiBersama);
-        setSisaCuti(response.data.sisacuti);
-        setSisaCuti1(response.data.sisacutiN1);
-        setSisaCuti2(response.data.sisacutiN2);
         setEmail(response.data.email);
         setRole(response.data.role);
       } catch (error) {
@@ -45,11 +35,6 @@ const FormEditUser = () => {
       await axios.patch(`http://localhost:5000/users/${id}`, {
         name: name,
         email: email,
-        nip: nip,
-        cutiBersama: cutiBersama,
-        sisacuti: sisacuti,
-        sisacutiN1: sisacuti1,
-        sisacutiN2: sisacuti2,
         password: password,
         confPassword: confPassword,
         role: role,
@@ -83,20 +68,6 @@ const FormEditUser = () => {
                   />
                 </div>
               </div>
-              <div className="field">
-                <label className="label">NIP</label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input"
-                    value={nip}
-                    onChange={(e) => setNIP(e.target.value)}
-                    placeholder="Nomor Induk Pegawai"
-                    pattern="\d{18}"
-                    title="NIP harus terdiri dari 18 digit angka"
-                  />
-                </div>
-              </div>
 
               <div className="field">
                 <label className="label">Email</label>
@@ -110,81 +81,8 @@ const FormEditUser = () => {
                   />
                 </div>
               </div>
-              <div className="field">
-                <label className="label">Cuti Bersama</label>
-                <div className="control">
-                  <input
-                    type="number"
-                    min={0}
-                    className="input"
-                    value={cutiBersama}
-                    onChange={(e) => {
-                      setCutiBersama(e.target.value);
-                    }}
-                    placeholder="Cuti Bersama"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Sisa Cuti (N)</label>
-                <div className="control">
-                  <input
-                    type="number"
-                    min={0}
-                    max={12}
-                    className="input"
-                    value={sisacuti}
-                    onChange={(e) => {
-                      const value = Math.max(
-                        0,
-                        Math.min(12, Number(e.target.value))
-                      );
-                      setSisaCuti(value);
-                    }}
-                    placeholder="Sisa cuti"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Sisa Cuti (N -1)</label>
-                <div className="control">
-                  <input
-                    type="number"
-                    min={0}
-                    max={6}
-                    className="input"
-                    value={sisacuti1}
-                    onChange={(e) => {
-                      const value = Math.max(
-                        0,
-                        Math.min(6, Number(e.target.value))
-                      );
-                      setSisaCuti1(value);
-                    }}
-                    placeholder="Sisa cuti"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Sisa Cuti (N -2)</label>
-                <div className="control">
-                  <input
-                    type="number"
-                    min={0}
-                    max={6}
-                    className="input"
-                    value={sisacuti2}
-                    onChange={(e) => {
-                      const value = Math.max(
-                        0,
-                        Math.min(6, Number(e.target.value))
-                      );
-                      setSisaCuti2(value);
-                    }}
-                    placeholder="Sisa cuti"
-                  />
-                </div>
-              </div>
+            
+      
               <div className="field">
                 <label className="label">Password</label>
                 <div className="control">

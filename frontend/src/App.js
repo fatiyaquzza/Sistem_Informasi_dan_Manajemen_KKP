@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./components/Login";
 import Users from "./pages/Users";
-import Constants from "./pages/Constants";
 import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
 import Forbidden from "./pages/Forbidden";
-import AddConstant from "./pages/AddConstant";
 import Navbar from "./components/admin/Navbar";
 import Home from "./components/user/Home/Home";
 import Team from "./components/user/Team/Team";
@@ -57,8 +55,6 @@ const Layout = ({ children }) => {
     "/users",
     "/users/add",
     "/users/edit/:id",
-    "/constants",
-    "/constants/add",
     "/forbidden",
     "/lawyers",
     "/lawyers/add",
@@ -80,65 +76,6 @@ const Layout = ({ children }) => {
 };
 
 function App() {
-  const [lastChecked, setLastChecked] = useState(null);
-  const [uuid, setUuid] = useState(null);
-
-  useEffect(() => {
-    getConstants();
-  }, []);
-
-  const getConstants = async () => {
-    try {
-      const response = await axios.get("http://localhost:5000/constants");
-      const lastCheckedConst = response.data.find(
-        (obj) => obj.name === "lastChecked"
-      );
-      if (lastCheckedConst) {
-        setLastChecked(lastCheckedConst.value);
-        setUuid(lastCheckedConst.uuid);
-      }
-    } catch (error) {
-      console.error("Error fetching constants:", error);
-    }
-  };
-
-  const updateYear = async (year, uuid) => {
-    try {
-      await axios.patch(`http://localhost:5000/constants/${uuid}`, {
-        name: "lastChecked",
-        value: year,
-      });
-      await axios.patch(`http://localhost:5000/update-cuti-year-end`);
-    } catch (error) {
-      if (error.response) {
-        console.error("Failed to update database:", error.response.data.msg);
-      }
-    }
-  };
-
-  useEffect(() => {
-    const checkForNewYear = async () => {
-      const now = new Date();
-      const year = now.getFullYear();
-      console.log(year);
-
-      if (lastChecked && uuid && year !== parseInt(lastChecked, 10)) {
-        updateYear(year, uuid); // Jalankan tugas update cuti pada tahun akhir
-      }
-    };
-
-    if (lastChecked !== null && uuid !== null) {
-      checkForNewYear();
-    }
-
-    const interval = setInterval(() => {
-      if (lastChecked !== null && uuid !== null) {
-        checkForNewYear();
-      }
-    }, 24 * 60 * 60 * 1000); // Cek setiap 24 jam
-
-    return () => clearInterval(interval);
-  }, [lastChecked, uuid]);
 
   return (
     <BrowserRouter basename="/">
@@ -230,22 +167,6 @@ function App() {
           element={
             <Layout>
               <EditUser />
-            </Layout>
-          }
-        />
-        <Route
-          path="/constants"
-          element={
-            <Layout>
-              <Constants />
-            </Layout>
-          }
-        />
-        <Route
-          path="/constants/add"
-          element={
-            <Layout>
-              <AddConstant />
             </Layout>
           }
         />

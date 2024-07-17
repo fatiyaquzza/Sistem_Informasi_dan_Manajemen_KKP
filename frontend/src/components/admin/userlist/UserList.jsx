@@ -63,11 +63,7 @@ const UserList = () => {
             <tr>
               <th>No</th>
               <th>Name</th>
-              <th>NIP</th>
-              <th>Cuti Bersama</th>
-              <th>Sisa Cuti Tahunan (N)</th>
-              <th>(N - 1)</th>
-              <th>(N - 2)</th>
+              <th>Email</th>
               <th style={{ textAlign: "center" }}>Actions</th>
             </tr>
           </thead>
@@ -76,12 +72,8 @@ const UserList = () => {
               <tr key={user.uuid} className="hover:bg-gray-100">
                 <td>{index + 1}</td>
                 <td>{user.name}</td>
-                <td>{user.nip}</td>
-                <td>{`${user.cutiBersama} Hari Kerja`}</td>
-                <td>{`${user.sisacuti} Hari Kerja`}</td>
-                <td>{`${user.sisacutiN1} Hari Kerja`}</td>
-                <td>{`${user.sisacutiN2} Hari Kerja`}</td>
-                <td className="text-center">
+                <td>{user.email}</td>
+                <td className="text-center" style={{ textAlign: "center" }}>
                   <Link
                     to={`/users/edit/${user.uuid}`}
                     className="button is-small is-info mr-2"

@@ -30,47 +30,8 @@ const Users = db.define(
         isEmail: true,
       },
     },
-    nip: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        len: [2, 18],
-      },
-    },
-    cutiBersama: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    sisacuti: {
-      type: DataTypes.INTEGER,
-      defaultValue: 12,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    sisacutiN1: {
-      type: DataTypes.INTEGER,
-      defaultValue: 6,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    sisacutiN2: {
-      type: DataTypes.INTEGER,
-      defaultValue: 6,
       allowNull: false,
       validate: {
         notEmpty: true,

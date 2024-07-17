@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
-import { IoKey, IoHome, IoLogOut } from "react-icons/io5";
+import { IoHome, IoLogOut } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { LogOut, reset } from "../../features/authSlice";
 import "bulma/css/bulma.css";
@@ -31,14 +31,6 @@ const Sidebar = () => {
             <NavLink to="/dashboard" className="menu-item">
               <div className="flex items-center gap-2">
                 <IoHome /> Dashboard
-              </div>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to={"/constants"} className="menu-item">
-              <div className="flex items-center gap-2">
-                <IoKey /> Constant
               </div>
             </NavLink>
           </li>
