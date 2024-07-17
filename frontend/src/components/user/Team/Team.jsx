@@ -1,12 +1,25 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { getLawyers } from "../../../service/LawyerService";
 import team1 from "../../../images/team1.png";
 import member1 from "../../../images/member1.jpg"; 
 import member2 from "../../../images/member2.png"; 
 import member3 from "../../../images/member3.png";
 
 const Team = () => {
-  const navigate = useNavigate();
+  const [lawyers, setLawyers] = useState([]);
+
+  useEffect(() => {
+    const fetchLawyers = async () => {
+      try {
+        const data = await getLawyers();
+        setLawyers(data);
+      } catch (error) {
+        console.error("Error fetching lawyers:", error);
+      }
+    };
+
+    fetchLawyers();
+  }, []);
 
   return (
     <>
@@ -16,9 +29,9 @@ const Team = () => {
           style={{ backgroundImage: `url(${team1})`, opacity: 0.2 }}
         ></div>
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-7xl font-bold border-b py-10 border-white">Our Team</h1>
+          <h1 className="text-7xl font-bold border-b py-10 border-white ">Our Team</h1>
           <p className="text-xl mt-5 font-light">
-          Expert litigators. Trusted advisors. Your champions in justice.
+            Expert litigators. Trusted advisors. Your champions in justice.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
@@ -41,31 +54,27 @@ const Team = () => {
         </div>
       </section>
 
-      <section
-        id="section2"
-        className=" bg-primarywhite text-black px-16 py-24"
-      >
-        <p className="font-Cinzel font-light text-5xl text-center border-b py-6 border-[#BCBCBC] w-[800px] mx-auto ">
-            MEET OUR <span className="text-brown font-semibold">TEAM</span>
+      <section id="section2" className=" bg-primarywhite text-black px-16 py-24">
+        <p className="font-Cinzel font-light text-5xl text-center border-b py-6 border-[#BCBCBC] w-[800px] mx-auto">
+          MEET OUR <span className="text-brown font-semibold">TEAM</span>
         </p>
         <hr className="w-[600px] mx-auto border-1 border-[#BCBCBC] my-10" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-Lato">
-          {[member1, member2, member3, member1, member2, member3, member1, member2, member3].map((member, index) => (
-            <div  onClick={() => navigate("/detail-team")} key={index} className="flex flex-col items-center w-[450px] shadow-md hover:shadow-xl cursor-pointer">
+          {lawyers.map((lawyer, index) => (
+            <div key={lawyer.id} className="w-[420px] flex flex-col items-center shadow-md hover:shadow-xl cursor-pointer">
               <img
-                src={member}
+                src={require(`../../../images/member${index + 1}.png`)}
                 alt={`Team member ${index + 1}`}
                 className="w-full h-[600px] object-cover"
               />
               <div className="w-full bg-[#8A4F3D] text-white text-center py-4">
-                <p className="text-2xl font-regular">Zulqaria Lahirya S.H., M.H.</p>
-                <p className="text-xl font-light italic">Pengacara</p>
+                <p className="text-2xl font-regular">{lawyer.name}</p>
+                <p className="text-xl font-light italic">{lawyer.position}</p>
               </div>
             </div>
           ))}
         </div>
-
       </section>
     </>
   );

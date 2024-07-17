@@ -18,6 +18,9 @@ import NavbarUser from "./components/user/NavbarUser";
 import Footer from "./components/user/Footer";
 import CivilLaw from "./components/user/AreasOfExpertise/CivilLaw";
 import CriminalLaw from "./components/user/AreasOfExpertise/CriminalLaw";
+import Lawyers from "./pages/Lawyers";
+import AddLawyer from "./pages/AddLawyer";
+import EditLawyer from "./pages/EditLawyer";
 
 import axios from "axios";
 
@@ -57,6 +60,9 @@ const Layout = ({ children }) => {
     "/constants",
     "/constants/add",
     "/forbidden",
+    "/lawyers",
+    "/lawyers/add",
+    "/lawyers/edit/:id",
   ];
 
   const showNavbarUser = userRoutes.includes(pathname);
@@ -248,6 +254,30 @@ function App() {
           element={
             <Layout>
               <Forbidden />
+            </Layout>
+          }
+        />
+        <Route
+          path="/lawyers"
+          element={
+            <Layout>
+              <Lawyers />
+            </Layout>
+          }
+        />
+        <Route
+          path="/lawyers/add"
+          element={
+            <Layout>
+              <AddLawyer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/lawyers/edit/:id"
+          element={
+            <Layout>
+              <EditLawyer />
             </Layout>
           }
         />

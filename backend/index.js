@@ -9,8 +9,10 @@ import db from "./config/database.js";
 import SequelizeStore from "connect-session-sequelize";
 import Constantsrouter from "./routes/ConstantRoute.js";
 import cron from "node-cron";
+import Lawyerrouter from "./routes/LawyerRoute.js";
 
 import { updateCutiAtYearEnd } from "./controllers/UserController.js";
+
 
 dotenv.config();
 
@@ -58,6 +60,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
 app.use(Authrouter);
 app.use(Constantsrouter);
+app.use(Lawyerrouter);
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`Server listening on ${process.env.APP_PORT}`);
