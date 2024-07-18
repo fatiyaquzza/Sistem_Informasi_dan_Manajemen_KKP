@@ -16,15 +16,16 @@ import NavbarUser from "./components/user/NavbarUser";
 import Footer from "./components/user/Footer";
 import CivilLaw from "./components/user/AreasOfExpertise/CivilLaw";
 import CriminalLaw from "./components/user/AreasOfExpertise/CriminalLaw";
-import Lawyers from "./pages/Lawyers";
-import AddLawyer from "./pages/AddLawyer";
-import EditLawyer from "./pages/EditLawyer";
-
-import axios from "axios";
+import AdminCases from "./components/admin/caseList/AdminCases";
 
 import "./index.css";
-import DetailTeam from "./components/user/Team/DetailTeam";
 import DetailCase from "./components/user/Cases/DetailCase";
+import CaseList from "./pages/CaseList";
+import TeamList from "./pages/TeamList";
+import LawyerEdit from "./pages/LawyerEdit";
+import CaseEdit from "./pages/CaseEdit";
+import CaseAdd from "./pages/CaseAdd";
+import LawyerAdd from "./pages/LawyerAdd";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -38,6 +39,7 @@ const ScrollToTop = () => {
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
+  
 
   const userRoutes = [
     "/",
@@ -48,7 +50,7 @@ const Layout = ({ children }) => {
     "/civil-law",
     "/criminal-law",
     "/detail-team",
-    "/detail-case",
+    "/admin-cases/:id",
   ];
   const adminRoutes = [
     "/dashboard",
@@ -56,9 +58,13 @@ const Layout = ({ children }) => {
     "/users/add",
     "/users/edit/:id",
     "/forbidden",
-    "/lawyers",
     "/lawyers/add",
     "/lawyers/edit/:id",
+    "/admin-cases",
+    "/admin-cases/add",
+    "/admin-cases/edit/:id",
+    "/caseList",
+    "/teamList"
   ];
 
   const showNavbarUser = userRoutes.includes(pathname);
@@ -179,18 +185,10 @@ function App() {
           }
         />
         <Route
-          path="/lawyers"
-          element={
-            <Layout>
-              <Lawyers />
-            </Layout>
-          }
-        />
-        <Route
           path="/lawyers/add"
           element={
             <Layout>
-              <AddLawyer />
+              <LawyerAdd />
             </Layout>
           }
         />
@@ -198,23 +196,55 @@ function App() {
           path="/lawyers/edit/:id"
           element={
             <Layout>
-              <EditLawyer />
+              <LawyerEdit />
             </Layout>
           }
         />
-        <Route
-          path="/detail-team"
+         <Route
+          path="/teamList"
           element={
             <Layout>
-              <DetailTeam />
+              <TeamList />
             </Layout>
           }
         />
         <Route
-          path="/detail-case"
+          path="/admin-cases/:id"
           element={
             <Layout>
               <DetailCase />
+            </Layout>
+          }
+        />
+        <Route
+          path="/admin-cases/edit/:id"
+          element={
+            <Layout>
+              <CaseEdit />
+            </Layout>
+          }
+        />
+         <Route
+          path="/admin-cases"
+          element={
+            <Layout>
+              <AdminCases />
+            </Layout>
+          }
+        />
+        <Route
+          path="/admin-cases/add"
+          element={
+            <Layout>
+              <CaseAdd />
+            </Layout>
+          }
+        />
+        <Route
+          path="/caseList"
+          element={
+            <Layout>
+              <CaseList />
             </Layout>
           }
         />

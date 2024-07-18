@@ -29,27 +29,27 @@ const Footer = () => {
           <h2 className="text-lg font-semibold">Info</h2>
           <ul className="mt-4 space-y-2 text-opacity-60 text-white">
             <li>
-              <Link to="/" className="hover:underline">
+              <Link to="/" className="hover:underline text-white opacity-50 hover:opacity-90">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/team" className="hover:underline">
+              <Link to="/team" className="hover:underline text-white opacity-50 hover:opacity-90">
                 Our Team
               </Link>
             </li>
             <li>
-              <Link to="/expertise" className="hover:underline">
+              <Link to="/expertise" className="hover:underline text-white opacity-50 hover:opacity-90">
                 Areas of Expertise
               </Link>
             </li>
             <li>
-              <Link to="/cases" className="hover:underline">
+              <Link to="/cases" className="hover:underline text-white opacity-50 hover:opacity-90">
                 Cases
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:underline">
+              <Link to="/contact" className="hover:underline text-white opacity-50 hover:opacity-90">
                 Contact Us
               </Link>
             </li>
@@ -61,7 +61,7 @@ const Footer = () => {
           <ul className="mt-4 space-y-2 text-opacity-60 text-white">
             <li>+1 891 989-11-91</li>
             <li>
-              <a href="mailto:help@logoipsum.com" className="hover:underline">
+              <a href="mailto:help@logoipsum.com" className="hover:underline text-white opacity-50 ">
                 help@logoipsum.com
               </a>
             </li>

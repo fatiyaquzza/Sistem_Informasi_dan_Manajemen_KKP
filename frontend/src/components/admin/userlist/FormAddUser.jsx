@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "bulma/css/bulma.css";
+
 
 const FormAddUser = () => {
   const [name, setName] = useState("");

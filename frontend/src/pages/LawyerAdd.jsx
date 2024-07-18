@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import UserList from "../components/admin/userlist/UserList";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
+import AddLawyer from "../components/admin/teamList/AddLawyer";
 
-const Users = () => {
+const LawyerAdd = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,9 +25,9 @@ const Users = () => {
   }, [isError, user, navigate]);
   return (
     <Layout>
-      <UserList />
+      <AddLawyer />
     </Layout>
   );
 };
 
-export default Users;
+export default LawyerAdd;

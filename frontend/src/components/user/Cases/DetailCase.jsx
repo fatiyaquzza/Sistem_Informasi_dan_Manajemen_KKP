@@ -1,18 +1,58 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { getCaseById } from "../../../service/CaseService";
+import { FaUser } from "react-icons/fa";
 import member1 from "../../../images/member1.jpg"; 
 
-
 const DetailCase = () => {
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [caseItem, setCaseItem] = useState(null);
+
+  useEffect(() => {
+    const fetchCase = async () => {
+      try {
+        const data = await getCaseById(id);
+        setCaseItem(data);
+      } catch (error) {
+        console.error("Error fetching case:", error);
+      }
+    };
+
+    fetchCase();
+  }, [id]);
+
+  if (!caseItem) {
+    return <div>Loading...</div>;
+  }
+
+  const formatDate = (dateString) => {
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return new Date(dateString).toLocaleDateString("id-ID", options);
+  };
+
+  const renderMember = (member, index) => {
+    if (member) {
+      return (
+        <div key={index} className="mt-2  p-2 w-[300px] text-white flex items-center border-solid border-brown border-2">
+          <FaUser className="mr-2 w-12 h-12 bg-brown p-2" /> {/* Ikon pengguna */}
+          <div className="text-brown font-semibold pl-1 capitalize">
+          {member}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <>
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
-
         <div className="relative z-10 text-center text-white">
-        <h1 className="text-6xl pb-10  border-white ">Case</h1>
-          <h1 className="text-6xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">Defending Tenant Rights</h1>
-       
+          <h1 className="text-6xl pb-10 border-white">Case</h1>
+          <h1 className="text-6xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">
+            {caseItem.caseName}
+          </h1>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
           <a href="#section2" className="p-2 text-white animate-bounce">
@@ -38,57 +78,24 @@ const DetailCase = () => {
         <div className="flex">
           <div className="w-1/4 pr-10">
             <p className="font-semibold">Last Updated:</p>
-            <p>23 Juni 2024 / 07:21 PM WIB</p>
-            <p className="mt-6 font-semibold">Team:</p>
-            <div className="flex items-center mt-2">
-              <img src={member1} alt="Team member 1" className="w-20 h-20 rounded-full object-cover" />
-              <p className="ml-2">Michael J. McKenna</p>
-            </div>
-            <div className="flex items-center mt-2">
-              <img src={member1} alt="Team member 2" className="w-20 h-20 rounded-full object-cover mt-4" />
-              <p className="ml-2">Sarah L. O'Neill</p>
-            </div>
-            <div className="flex items-center mt-2">
-              <img src={member1} alt="Team member 3" className="w-20 h-20 rounded-full object-cover mt-4" />
-              <p className="ml-2">James T. Wilson</p>
-            </div>
+            <p>{formatDate(caseItem.caseDate)}</p>
+
+            <p className="mt-5 font-semibold">Members:</p>
+            {renderMember(caseItem.caseMember1, 1)}
+            {renderMember(caseItem.caseMember2, 2)}
+            {renderMember(caseItem.caseMember3, 3)}
+            {renderMember(caseItem.caseMember4, 4)}
           </div>
           <div className="w-3/4 text-justify">
             <h2 className="text-3xl font-semibold">Background</h2>
-            <p className="mt-4">
-              In early 2024, a tenant faced an unjust eviction notice from their landlord,
-              which was alleged to be retaliatory in nature due to the tenant exercising
-              their legal right to request necessary repairs to the property. The landlord
-              issued an eviction notice without proper legal grounds, prompting the tenant
-              to seek legal assistance from our organization.
-            </p>
+            <p className="mt-4">{caseItem.caseAbout}</p>
             <h2 className="text-3xl font-semibold mt-10">Actions Taken</h2>
-            <p className="mt-4">
-              Our legal team began with a thorough review of the eviction notice and the
-              tenant's lease agreement during the initial consultation. Following this, we
-              filed a formal complaint with the local housing authority and initiated legal
-              proceedings to contest the eviction. We meticulously gathered evidence of the
-              landlord's retaliatory actions, including communication records and
-              documentation of the requested repairs. Throughout the process, we engaged in
-              negotiations with the landlord's legal representatives to seek an amicable
-              resolution. Ultimately, our team represented the tenant in court, presenting
-              a strong case demonstrating the illegality of the eviction notice.
-            </p>
+            <p className="mt-4">{caseItem.caseAction}</p>
             <h2 className="text-3xl font-semibold mt-10">Outcome</h2>
-            <p className="mt-4">
-              Our legal team began with a thorough review of the eviction notice and the
-              tenant's lease agreement during the initial consultation. Following this, we
-              filed a formal complaint with the local housing authority and initiated legal
-              proceedings to contest the eviction. We meticulously gathered evidence of the
-              landlord's retaliatory actions, including communication records and
-              documentation of the requested repairs. Throughout the process, we engaged in
-              negotiations with the landlord's legal representatives to seek an amicable
-              resolution. Ultimately, our team represented the tenant in court, presenting
-              a strong case demonstrating the illegality of the eviction notice.
-            </p>
+            <p className="mt-4">{caseItem.caseOutcome}</p>
           </div>
         </div>
-        <div className=" mt-10">
+        <div className="mt-10 flex justify-end">
           <button
             onClick={() => navigate("/cases")}
             className="mt-10 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-6 py-3 hover:bg-transparent hover:text-brown"

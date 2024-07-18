@@ -94,7 +94,7 @@ const ContactUs = () => {
               <p>Kopelma Darussalam</p>
               <p>Kec. Syiah Kuala, Kota Banda Aceh, Aceh 23111</p>
             </div>
-            <div className="bg-brown text-white p-6 mt-4">
+            <div className="bg-brown text-white p-6 mt-10">
               <h3 className="text-2xl font-semibold mb-4">Reach out to us :</h3>
               <p>Phone: (123) 456-7890</p>
               <p>Email: contact@legalhelp.org</p>

@@ -1,10 +1,37 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { getCases } from "../../../service/CaseService";
 import Case from "../../../images/Case.png";
 import familyLaw from "../../../images/familyLaw.png";
 
 const Cases = () => {
+  const [cases, setCases] = useState([]);
+
+  useEffect(() => {
+    const fetchCases = async () => {
+      try {
+        const data = await getCases();
+        setCases(data);
+      } catch (error) {
+        console.error("Error fetching cases:", error);
+      }
+    };
+
+    fetchCases();
+  }, []);
+
   const navigate = useNavigate();
+  const formatDate = (dateString) => {
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return new Date(dateString).toLocaleDateString("id-ID", options);
+  };
+
+  const ellipsisStyle = {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  };
+
   return (
     <>
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
@@ -49,27 +76,27 @@ const Cases = () => {
         </p>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-20 font-Lato">
-          {cases.map((caseItem, index) => (
-            <div key={index} className="bg-gray-100 px-2 py-6 shadow-sm shadow-black">
+          {cases.map((caseItem) => (
+            <div key={caseItem.id} className="bg-gray-100 px-2 py-6 shadow-sm shadow-black">
               <div className="relative px-24">
                 <img
-                  src={caseItem.image}
-                  alt={caseItem.title}
+                  src={familyLaw}
+                  alt={caseItem.caseName}
                   className="w-full h-60 object-cover border-black border-2"
                 />
                 <div className="absolute top-0 left-0 bg-black text-white text-xs mx-24 px-2 py-1">
-                  {caseItem.date}
+                  {formatDate(caseItem.caseDate)}
                 </div>
               </div>
               <div className="p-4">
-                <h2 className="text-lg font-semibold text-center">{caseItem.title}</h2>
-                <p className="mt-2 text-sm text-gray-600 text-center">
-                  {caseItem.description}
+                <h2 className="text-2xl font-semibold text-center">{caseItem.caseName}</h2>
+                <p className="mt-4 px-10 text-lg text-gray-600 text-justify" style={ellipsisStyle}>
+                  {caseItem.caseAbout}
                 </p>
                 <div className="flex justify-center">
-                <button onClick={() => navigate("/detail-case")} className="mt-6 px-6 py-2 text-sm shadow-md border-2 border-solid border-brown bg-transparent text-brown hover:border-brown hover:bg-brown hover:border-2 hover:shadow-none hover:text-white">
+                <Link to={`/admin-cases/${caseItem.id}`} className="mt-5 px-6 py-2 text-sm shadow-md border-2 border-solid border-brown bg-transparent text-brown hover:border-brown hover:bg-brown hover:border-2 hover:shadow-none hover:text-white">
                   Read More
-                </button>
+                </Link>
                 </div>
               </div>
             </div>
@@ -107,36 +134,5 @@ const Pagination = () => {
     </div>
   );
 };
-
-const cases = [
-  {
-    date: "3 Januari 2022",
-    title: "Defending Tenant Rights",
-    description:
-      "Successfully defended a group of tenants facing unjust eviction from their apartments.",
-    image: familyLaw
-  },
-  {
-    date: "3 Januari 2022",
-    title: "Personal Injury Compensation",
-    description:
-      "Helped a client who suffered severe injuries in a car accident caused by a negligent driver.",
-    image: familyLaw
-  },
-  {
-    date: "3 Januari 2022",
-    title: "Personal Injury Compensation",
-    description:
-      "Helped a client who suffered severe injuries in a car accident caused by a negligent driver.",
-    image: familyLaw
-  },
-  {
-    date: "3 Januari 2022",
-    title: "Defending Tenant Rights",
-    description:
-      "Successfully defended a group of tenants facing unjust eviction from their apartments.",
-    image: familyLaw
-  },
-];
 
 export default Cases;

@@ -4,7 +4,6 @@ import FormEditUser from "../components/admin/userlist/FormEditUser";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import "bulma/css/bulma.css";
 
 const EditUser = () => {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import FormAddUser from "../components/admin/userlist/FormAddUser";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import "bulma/css/bulma.css";
+
 
 const AddUser = () => {
   const dispatch = useDispatch();

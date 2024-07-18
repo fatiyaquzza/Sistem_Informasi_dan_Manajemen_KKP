@@ -7,11 +7,11 @@ const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="columns mt-6" style={{ minHeight: "100vh" }}>
-        <div className="column is-2">
+      <div className="columns mt-10" style={{ minHeight: "100vh" }}>
+        <div className="pr-20 pl-6">
           <Sidebar />
         </div>
-        <div className="column has-background-light">
+        <div className="bg-primarywhite w-full pt-10">
           <main>{children}</main>
         </div>
       </div>

@@ -58,9 +58,8 @@ const Team = () => {
         <p className="font-Cinzel font-light text-5xl text-center border-b py-6 border-[#BCBCBC] w-[800px] mx-auto">
           MEET OUR <span className="text-brown font-semibold">TEAM</span>
         </p>
-        <hr className="w-[600px] mx-auto border-1 border-[#BCBCBC] my-10" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-Lato">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-Lato mt-10">
           {lawyers.map((lawyer, index) => (
             <div key={lawyer.id} className="w-[420px] flex flex-col items-center shadow-md hover:shadow-xl cursor-pointer">
               <img

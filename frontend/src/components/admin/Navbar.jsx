@@ -1,48 +1,25 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { LogOut, reset } from "../../features/authSlice";
-import { useNavigate } from "react-router-dom";
-import "bulma/css/bulma.css";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { FaUser } from 'react-icons/fa'; // Contoh menggunakan FontAwesome
 
 const Navbar = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-  const logout = () => {
-    dispatch(LogOut());
-    dispatch(reset());
-    navigate("/");
-  };
+  const user = useSelector((state) => state.auth.user);
 
   return (
     <div>
-      <nav
-        className="navbar is-fixed-top has-shadow"
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <span
-              style={{
-                marginLeft: "10px",
-                fontWeight: "bold",
-                fontSize: "1.5em",
-              }}
-            >
-              Sistem Pengajuan Cuti Pegawai
-            </span>
-          </a>
-        </div>
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <button onClick={logout} className="button is-danger is-light">
-                  Log Out
-                </button>
-              </div>
-            </div>
+      <nav className="fixed top-0 w-full z-50 bg-white shadow-sm">
+        <div className="flex justify-between items-center h-16 px-4 md:px-16">
+          <Link to="/dashboard" className="text-xl font-Poppins font-bold text-black">
+            Admin LKBH Sata Al-Faqih
+          </Link>
+
+          <div className="flex items-center">
+            <p className="text-black rounded capitalize font-semibold mr-2">
+              Halo, {user && user.name}
+            </p>
+            <FaUser className="text-gray-600 text-lg" />
           </div>
         </div>
       </nav>
