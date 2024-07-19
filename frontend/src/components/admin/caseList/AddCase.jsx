@@ -29,7 +29,7 @@ const AddCase = () => {
         caseMember3,
         caseMember4,
       });
-      navigate("/admin-cases");
+      navigate("/caseList");
     } catch (error) {
       console.error("Error saving case:", error);
     }

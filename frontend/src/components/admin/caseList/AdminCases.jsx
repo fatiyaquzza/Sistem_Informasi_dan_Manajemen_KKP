@@ -29,6 +29,11 @@ const AdminCases = () => {
     }
   };
 
+  const formatDate = (dateString) => {
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return new Date(dateString).toLocaleDateString("id-ID", options);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8 font-Poppins">
       <h1 className="text-3xl font-bold mb-4">Manage Cases</h1>
@@ -41,7 +46,7 @@ const AdminCases = () => {
       <table className="min-w-full bg-white border shadow-sm rounded">
         <thead>
           <tr className="bg-gray-200 text-center">
-          <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
+            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
               No
             </th>
             <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
@@ -58,23 +63,23 @@ const AdminCases = () => {
         <tbody>
           {cases.map((casee, index) => (
             <tr key={casee.id}>
-              <td className="border px-6 py-4">{index+1}</td>
+              <td className="border px-6 py-4">{index + 1}</td>
               <td className="border px-6 py-4">{casee.caseName}</td>
-              <td className="border px-6 py-4">{casee.caseDate}</td>
+              <td className="border px-6 py-4">{formatDate(casee.caseDate)}</td>
               <td className="border px-6 py-4">
-              <div className="flex justify-between">
-                <Link
-                  to={`/admin-cases/edit/${casee.id}`}
-                  className="text-blue-500 hover:text-blue-700 mr-2"
-                >
-                  <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
-                </Link>
-                <button
-                  onClick={() => deleteLawyer(casee.id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
-                </button>
+                <div className="flex justify-between">
+                  <Link
+                    to={`/admin-cases/edit/${casee.id}`}
+                    className="text-blue-500 hover:text-blue-70 border-blue-500 border-2 border-solid p-2 rounded hover:bg-blue-500 hover:text-white"
+                  >
+                    <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
+                  </Link>
+                  <button
+                    onClick={() => deleteLawyer(casee.id)}
+                    className="text-red-500  border-red-500 border-2 border-solid p-2 rounded hover:bg-red-500 hover:text-white"
+                  >
+                    <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
+                  </button>
                 </div>
               </td>
             </tr>

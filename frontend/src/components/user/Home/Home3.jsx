@@ -2,6 +2,7 @@ import React from "react";
 import home3_1 from "../../../images/home3-1.png";
 import home3_2 from "../../../images/home3-2.png";
 import home3_3 from "../../../images/home3-3.png";
+import { Link } from "react-router-dom";
 
 const Home3 = () => {
   return (
@@ -31,44 +32,29 @@ const Home3 = () => {
           </div>
 
           <div className="w-1/2 ml-10">
-            <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 flex items-center">
-              <div>
-                <p className="font-Lato font-bold text-white text-md mb-2 pl-12 pt-8">
-                  Hukum Keluarga
-                </p>
-                <p className="font-lato pl-12 text-white font-light text-md text-justify mb-8">
-                  Mengurusi kasus-kasus perceraian, hak asuh anak, pembagian
-                  harta, dan kasus-kasus kekerasan dalam rumah tangga.
-                </p>
-              </div>
-
-              <div className="flex justify-center pr-12 pl-8">
-                <img src={home3_2} alt="lawyer" className="w-[460px] h-[200px]" />
-              </div>
-            </div>
-
-            <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 flex items-center mt-6">
+            
+            <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8  items-center mt-6">
               <div>
                 <p className="font-Lato font-bold text-white text-md mb-2 pl-12 pt-8">
                   Hukum Properti
                 </p>
-                <p className="font-lato pl-12 text-white font-light text-md text-justify mb-8">
+                <p className="font-lato pl-12 pr-12 text-white font-light text-md text-justify mb-8 ">
                   Membantu klien dalam transaksi properti, sengketa properti,
                   sewa-menyewa, dan hak kepemilikan tanah.
                 </p>
               </div>
 
               <div className="flex justify-center pr-12 pl-8">
-                <img src={home3_3} alt="lawyer" className="w-[460px] h-[200px]" />
+                <img src={home3_3} alt="lawyer" className="w-[300px] h-[260px]" />
               </div>
             </div>
           </div>
         </div>
 
         <div className="flex justify-center mt-10">
-        <button className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6">
+        <Link to="/expertise" className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6">
         See All Practice Area
-        </button>
+        </Link>
         </div>
       </section>
     </>

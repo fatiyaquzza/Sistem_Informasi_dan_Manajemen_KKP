@@ -18,7 +18,7 @@ const AddLawyer = () => {
         about,
         description,
       });
-      navigate("/lawyers");
+      navigate("/teamList");
     } catch (error) {
       console.error("Error saving lawyer:", error);
     }

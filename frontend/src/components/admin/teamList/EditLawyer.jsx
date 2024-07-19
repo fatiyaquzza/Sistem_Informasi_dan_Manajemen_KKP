@@ -35,7 +35,7 @@ const EditLawyer = () => {
         about,
         description,
       });
-      navigate("/lawyers");
+      navigate("/teamList");
     } catch (error) {
       console.error("Error updating lawyer:", error);
     }
@@ -44,7 +44,7 @@ const EditLawyer = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Edit Lawyer</h1>
-      <form onSubmit={updateLawyer} className="max-w-md mx-auto">
+      <form onSubmit={updateLawyer} className="max-w-full p-10 shadow-md rounded bg-white">
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
             Name
@@ -54,7 +54,7 @@ const EditLawyer = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -66,7 +66,7 @@ const EditLawyer = () => {
             type="text"
             value={position}
             onChange={(e) => setPosition(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -77,7 +77,7 @@ const EditLawyer = () => {
             id="about"
             value={about}
             onChange={(e) => setAbout(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>
         <div className="mb-4">
@@ -88,7 +88,7 @@ const EditLawyer = () => {
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>
         <button

@@ -2,6 +2,7 @@ import React from "react";
 import home5_1 from "../../../images/home5-1.png";
 import home5_2 from "../../../images/home5-2.png";
 import home5_3 from "../../../images/home5-3.png";
+import { Link } from "react-router-dom";
 
 const Home5 = () => {
   return (
@@ -27,9 +28,9 @@ const Home5 = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <button className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6">
+        <Link to="/team" className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6">
         View All Team Members
-        </button>
+        </Link>
         </div>
     </section>
     </>

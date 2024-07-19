@@ -34,6 +34,7 @@ const FormAddUser = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Add New User</h1>
       <form onSubmit={saveUser} className="max-w-full p-10 shadow-md rounded bg-white">
+        <p className="text-center text-red-500 mb-4">{msg}</p>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
             Name

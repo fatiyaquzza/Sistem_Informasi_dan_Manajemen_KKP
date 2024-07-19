@@ -82,13 +82,13 @@ const UserList = () => {
                 <div className="flex justify-between">
                 <Link
                   to={`/users/edit/${user.uuid}`}
-                  className="text-blue-500 hover:text-blue-700 mr-2"
+                  className="text-blue-500 hover:text-blue-70 border-blue-500 border-2 border-solid p-2 rounded hover:bg-blue-500 hover:text-white"
                 >
                   <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
                 </Link>
                 <button
                   onClick={() => openModal(user)}
-                  className="text-red-500 hover:text-red-700"
+                  className="text-red-500  border-red-500 border-2 border-solid p-2 rounded hover:bg-red-500 hover:text-white"
                 >
                    <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
                 </button>
