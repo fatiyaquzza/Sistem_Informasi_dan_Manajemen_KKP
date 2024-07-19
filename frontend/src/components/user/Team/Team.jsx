@@ -61,11 +61,11 @@ const Team = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-Lato mt-10">
-          {lawyers.map((lawyer, index) => (
+          {lawyers.map((lawyer) => (
           <Link to={`/lawyers/${lawyer.id}`} >
             <div key={lawyer.id} className="w-[420px] flex flex-col items-center shadow-md hover:shadow-xl cursor-pointer">
               <img
-                src={require(`../../../images/member${index + 1}.png`)}
+                src={lawyer.url}
                 alt={lawyer.name}
                 className="w-full h-[600px] object-cover"
               />

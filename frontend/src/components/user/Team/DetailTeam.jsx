@@ -59,7 +59,7 @@ const DetailTeam = () => {
 
         <div className="flex flex-col items-center">
           <img
-            src={member1} // Replace with the correct path to the image
+            src={lawyer.url} // Replace with the correct path to the image
             alt="Zulqaria Lahirya"
             className="w-[400px] h-auto rounded-md"
           />
