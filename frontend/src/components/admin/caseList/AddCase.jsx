@@ -38,9 +38,9 @@ const AddCase = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Add New Cases</h1>
-      <form onSubmit={saveCase} className="max-w-md mx-auto">
+      <form onSubmit={saveCase} className="max-w-full p-10 shadow-md rounded bg-white ">
         <div className="mb-4">
-          <label htmlFor="caseName" className="block text-gray-700 font-bold mb-2">
+          <label htmlFor="caseName" className="block text-gray-700 font-bold mb-2 ">
             Name
           </label>
           <input
@@ -49,7 +49,7 @@ const AddCase = () => {
             value={caseName}
             required
             onChange={(e) => setcaseName(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -65,7 +65,7 @@ const AddCase = () => {
             value={caseDate}
             required
             onChange={(e) => setcaseDate(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -77,7 +77,7 @@ const AddCase = () => {
             value={caseAbout}
             required
             onChange={(e) => setcaseAbout(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>
         <div className="mb-4">
@@ -92,7 +92,7 @@ const AddCase = () => {
             value={caseAction}
             required
             onChange={(e) => setcaseAction(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>
         <div className="mb-4">
@@ -107,7 +107,7 @@ const AddCase = () => {
             value={caseOutcome}
             required
             onChange={(e) => setcaseOutcome(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>
         <div className="mb-4">
@@ -120,7 +120,7 @@ const AddCase = () => {
             value={caseMember1}
             required
             onChange={(e) => setcaseMember1(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -132,7 +132,7 @@ const AddCase = () => {
             type="text"
             value={caseMember2}
             onChange={(e) => setcaseMember2(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -144,7 +144,7 @@ const AddCase = () => {
             type="text"
             value={caseMember3}
             onChange={(e) => setcaseMember3(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <div className="mb-4">
@@ -156,7 +156,7 @@ const AddCase = () => {
             type="text"
             value={caseMember4}
             onChange={(e) => setcaseMember4(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
           />
         </div>
         <button

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Lawyers = () => {
   const [lawyers, setLawyers] = useState([]);
@@ -28,17 +30,20 @@ const Lawyers = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 font-Poppins">
       <h1 className="text-3xl font-bold mb-4">Manage Lawyers</h1>
       <Link
         to="/lawyers/add"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block mb-4"
+        className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded inline-block mb-4"
       >
         Add New Lawyer
       </Link>
       <table className="min-w-full bg-white border shadow-sm rounded">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-gray-200 text-center">
+          <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
+              No
+            </th>
             <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
               Name
             </th>
@@ -51,23 +56,26 @@ const Lawyers = () => {
           </tr>
         </thead>
         <tbody>
-          {lawyers.map((lawyer) => (
+          {lawyers.map((lawyer, index) => (
             <tr key={lawyer.id}>
+              <td className="border px-6 py-4">{index+1}</td>
               <td className="border px-6 py-4">{lawyer.name}</td>
               <td className="border px-6 py-4">{lawyer.position}</td>
               <td className="border px-6 py-4">
+              <div className="flex justify-between">
                 <Link
                   to={`/lawyers/edit/${lawyer.id}`}
                   className="text-blue-500 hover:text-blue-700 mr-2"
                 >
-                  Edit
+                  <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
                 </Link>
                 <button
                   onClick={() => deleteLawyer(lawyer.id)}
                   className="text-red-500 hover:text-red-700"
                 >
-                  Delete
+                  <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
                 </button>
+                </div>
               </td>
             </tr>
           ))}
