@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getLawyers } from "../../../service/LawyerService";
+import { Link } from "react-router-dom";
 import team1 from "../../../images/team1.png";
 import member1 from "../../../images/member1.jpg"; 
 import member2 from "../../../images/member2.png"; 
@@ -61,10 +62,11 @@ const Team = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-Lato mt-10">
           {lawyers.map((lawyer, index) => (
+          <Link to={`/lawyers/${lawyer.id}`} >
             <div key={lawyer.id} className="w-[420px] flex flex-col items-center shadow-md hover:shadow-xl cursor-pointer">
               <img
                 src={require(`../../../images/member${index + 1}.png`)}
-                alt={`Team member ${index + 1}`}
+                alt={lawyer.name}
                 className="w-full h-[600px] object-cover"
               />
               <div className="w-full bg-[#8A4F3D] text-white text-center py-4">
@@ -72,6 +74,7 @@ const Team = () => {
                 <p className="text-xl font-light italic">{lawyer.position}</p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </section>

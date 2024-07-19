@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getCases } from "../../../service/CaseService";
 import Case from "../../../images/Case.png";
 import familyLaw from "../../../images/familyLaw.png";
@@ -20,7 +20,6 @@ const Cases = () => {
     fetchCases();
   }, []);
 
-  const navigate = useNavigate();
   const formatDate = (dateString) => {
     const options = { day: "numeric", month: "long", year: "numeric" };
     return new Date(dateString).toLocaleDateString("id-ID", options);

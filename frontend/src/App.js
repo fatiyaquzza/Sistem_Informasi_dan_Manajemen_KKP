@@ -26,6 +26,7 @@ import LawyerEdit from "./pages/LawyerEdit";
 import CaseEdit from "./pages/CaseEdit";
 import CaseAdd from "./pages/CaseAdd";
 import LawyerAdd from "./pages/LawyerAdd";
+import DetailTeam from "./components/user/Team/DetailTeam";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -51,6 +52,7 @@ const Layout = ({ children }) => {
     "/criminal-law",
     "/detail-team",
     "/admin-cases/:id",
+    "/lawyers/:id",
   ];
   const adminRoutes = [
     "/dashboard",
@@ -181,6 +183,14 @@ function App() {
           element={
             <Layout>
               <Forbidden />
+            </Layout>
+          }
+        />
+         <Route
+          path="/lawyers/:id"
+          element={
+            <Layout>
+              <DetailTeam />
             </Layout>
           }
         />

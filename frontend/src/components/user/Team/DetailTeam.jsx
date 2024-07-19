@@ -1,16 +1,36 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import member1 from "../../../images/member1.jpg"; 
+import { getLawyerById } from "../../../service/LawyerService";
 
 const DetailTeam = () => {
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [lawyer, setLawyer] = useState(null);
+
+  useEffect(() => {
+    const fetchCase = async () => {
+      try {
+        const data = await getLawyerById(id);
+        setLawyer(data);
+      } catch (error) {
+        console.error("Error fetching lawyer:", error);
+      }
+    };
+
+    fetchCase();
+  }, [id]);
+
+  if (!lawyer) {
+    return <div>Loading...</div>;
+  }
+  
   return (
     <>
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
 
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-7xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">Zulqaria Lahirya, S.H., M.H.</h1>
-       
+          <h1 className="text-7xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">{lawyer.name}</h1>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
           <a href="#section2" className="p-2 text-white animate-bounce">
@@ -46,14 +66,14 @@ const DetailTeam = () => {
 
         </div>
 
-        <p className="text-3xl mt-8 font-semibold text-center">Zulqaria Lahirya, S.H., M.H.</p>
-        <p className="text-xl mt-2 text-gray-600 text-center">Advokat</p>
+        <p className="text-3xl mt-8 font-semibold text-center">{lawyer.name}</p>
+        <p className="text-xl mt-2 text-gray-600 text-center">{lawyer.position}</p>
 
         <p className="text-2xl mt-8 font-semibold px-40">About</p>
           <p className="mt-4 text-xl text-justify tet-black2 px-40">
-            Zulqaria Lahirya, S.H., merupakan Advokat di Kantor SATA Lawyers yang telah memiliki berbagai pengalaman. Zulqaria Lahirya, S.H. menyelesaikan pendidikan formal Sarjana Hukum di Universitas Islam Negeri Ar-Raniry serta telah menempuh berbagai pelatihan di bidang hukum.
+          {lawyer.about}
             <br /><br />
-            Sosok Advokat muda ini, merupakan Advokat yang telah berpengalaman dibidang Litigasi Pidana, ketenagakerjaan dan pertanahan dan pertambangan.
+          {lawyer.description}
           </p>
 
         <div className="px-40 mt-10">
