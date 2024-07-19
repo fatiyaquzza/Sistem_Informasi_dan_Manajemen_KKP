@@ -1,12 +1,18 @@
 import express from "express";
-import { createLawyer, getLawyers, getLawyerById, updateLawyer, deleteLawyer } from "../controllers/LawyerController.js";
+import {
+  createLawyer,
+  getLawyers,
+  getLawyerById,
+  updateLawyer,
+  deleteLawyer,
+} from "../controllers/LawyerController.js";
 
-const router = express.Router();
+const Lawyerrouter = express.Router();
 
-router.post("/lawyers", createLawyer);
-router.get("/lawyers", getLawyers);
-router.get("/lawyers/:id", getLawyerById);
-router.patch("/lawyers/:id", updateLawyer);
-router.delete("/lawyers/:id", deleteLawyer);
+Lawyerrouter.post("/lawyers", createLawyer);
+Lawyerrouter.get("/lawyers", getLawyers);
+Lawyerrouter.get("/lawyers/:id", getLawyerById);
+Lawyerrouter.patch("/lawyers/:id", updateLawyer);
+Lawyerrouter.delete("/lawyers/:id", deleteLawyer);
 
-export default router;
+export default Lawyerrouter;
