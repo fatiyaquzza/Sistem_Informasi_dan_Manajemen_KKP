@@ -30,6 +30,7 @@ const Lawyers = () => {
   };
 
   return (
+    <>
     <div className="container mx-auto px-4 py-8 font-Poppins">
       <h1 className="text-3xl font-bold mb-4">Manage Lawyers</h1>
       <Link
@@ -60,24 +61,24 @@ const Lawyers = () => {
         </thead>
         <tbody>
           {lawyers.map((lawyer, index) => (
-            <tr key={lawyer.id}>
+            <tr key={lawyer.id} className="mx-auto text-center">
               <td className="border px-6 py-4">{index + 1}</td>
               <td className="border px-6 py-4">{lawyer.name}</td>
               <td className="border px-6 py-4">{lawyer.position}</td>
               <td className="border px-6 py-4">
-                <img src={lawyer.url} />
+                <img src={lawyer.url}  className="w-32 h-32 mx-auto"/>
               </td>
               <td className="border px-6 py-4">
                 <div className="flex justify-between">
                   <Link
                     to={`/lawyers/edit/${lawyer.id}`}
-                    className="text-blue-500 hover:text-blue-70 border-blue-500 border-2 border-solid p-2 rounded hover:bg-blue-500 hover:text-white"
+                    className="hover:text-blue-500 hover:bg-white border-blue-500 border-2 border-solid p-2 rounded bg-blue-500 text-white"
                   >
                     <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
                   </Link>
                   <button
                     onClick={() => deleteLawyer(lawyer.id)}
-                    className="text-red-500  border-red-500 border-2 border-solid p-2 rounded hover:bg-red-500 hover:text-white"
+                    className="hover:text-red-500 hover:bg-white  border-red-500 border-2 border-solid p-2 rounded bg-red-500 text-white"
                   >
                     <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
                   </button>
@@ -88,6 +89,7 @@ const Lawyers = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const NavbarUser = () => {
   const [navBg, setNavBg] = useState("bg-opacity-0");
   const [navText, setNavText] = useState("text-white");
+  const [navOpen, setNavOpen] = useState(false);
 
   const changeBackground = () => {
     if (window.scrollY >= 100) {
@@ -15,6 +16,10 @@ const NavbarUser = () => {
     }
   };
 
+  const toggleNav = () => {
+    setNavOpen(!navOpen);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
     return () => {
@@ -24,15 +29,15 @@ const NavbarUser = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition duration-500 ease-in-out ${navBg} px-12`}
+      className={`fixed w-full z-50 transition duration-500 ease-in-out ${navBg} px-4 md:px-12`}
     >
-      <div className="flex justify-between items-center h-16 px-4 md:px-16">
+      <div className="flex justify-between items-center h-16  md:px-12">
         <Link to="/" className={`text-xl font-Cinzel font-bold ${navText}`}>
           LKBH Sata Al-Faqih
         </Link>
-        <div className="px-4 cursor-pointer md:hidden">
+        <div className="md:hidden" onClick={toggleNav}>
           <svg
-            className={`w-6 h-6 ${navText}`}
+            className={`w-6 h-6 cursor-pointer ${navText}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -46,23 +51,63 @@ const NavbarUser = () => {
             ></path>
           </svg>
         </div>
-        <div className={`md:block hidden font-Lato font-semibold ${navText}`}>
-          <Link to="/" className={`px-8 hover:text-gray-500 ${navText}`}>
+        <div className="hidden md:flex space-x-8 font-Lato font-semibold">
+          <Link to="/" className={`hover:text-gray-500 ${navText}`}>
             Home
           </Link>
-          <Link to="/team" className={`px-8 hover:text-gray-500 ${navText}`}>
+          <Link to="/team" className={`hover:text-gray-500 ${navText}`}>
+            Our Team
+          </Link>
+          <Link to="/expertise" className={`hover:text-gray-500 ${navText}`}>
+            Areas of Expertise
+          </Link>
+          <Link to="/cases" className={`hover:text-gray-500 ${navText}`}>
+            Cases
+          </Link>
+          <Link to="/contact" className={`hover:text-gray-500 ${navText}`}>
+            Contact Us
+          </Link>
+        </div>
+      </div>
+      <div
+        className={`md:hidden ${
+          navOpen ? "block" : "hidden"
+        } bg-white shadow-md`}
+      >
+        <div className="flex flex-col space-y-4 py-4">
+          <Link
+            to="/"
+            className="px-6 py-2 hover:bg-gray-100"
+            onClick={toggleNav}
+          >
+            Home
+          </Link>
+          <Link
+            to="/team"
+            className="px-6 py-2 hover:bg-gray-100"
+            onClick={toggleNav}
+          >
             Our Team
           </Link>
           <Link
             to="/expertise"
-            className={`px-8 hover:text-gray-500 ${navText}`}
+            className="px-6 py-2 hover:bg-gray-100"
+            onClick={toggleNav}
           >
             Areas of Expertise
           </Link>
-          <Link to="/cases" className={`px-8 hover:text-gray-500 ${navText}`}>
+          <Link
+            to="/cases"
+            className="px-6 py-2 hover:bg-gray-100"
+            onClick={toggleNav}
+          >
             Cases
           </Link>
-          <Link to="/contact" className={`pl-8 hover:text-gray-500 ${navText}`}>
+          <Link
+            to="/contact"
+            className="px-6 py-2 hover:bg-gray-100"
+            onClick={toggleNav}
+          >
             Contact Us
           </Link>
         </div>

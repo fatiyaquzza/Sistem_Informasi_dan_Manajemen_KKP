@@ -14,7 +14,6 @@ import fileUpload from "express-fileupload";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -28,10 +27,6 @@ const store = new sessionStore({
   db: db,
   expiration: 24 * 60 * 60 * 1000,
 });
-
-// (async () => {
-//   await db.sync();
-// })();
 
 app.use(
   session({
@@ -55,12 +50,8 @@ app.use(
   })
 );
 app.use(fileUpload());
-// app.use(express.static("public"));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
-// app.use(express.json());
-
-// Use body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -73,3 +64,7 @@ app.use(Caserouter);
 app.listen(process.env.APP_PORT, () => {
   console.log(`Server listening on ${process.env.APP_PORT}`);
 });
+
+// (async () => {
+//   await db.sync();
+// })();

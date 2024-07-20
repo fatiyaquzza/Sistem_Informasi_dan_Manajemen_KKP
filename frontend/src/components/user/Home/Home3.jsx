@@ -19,7 +19,7 @@ const Home3 = () => {
 
             <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full pb-8">
               <p className="font-Lato font-bold text-white text-md mb-2 px-12 pt-8">
-                Hukum Kontrak
+                Hukum Pidana
               </p>
               <p className="font-lato w-full px-12 text-white font-light text-md text-justify mb-8">
                 Membuat, meninjau, dan menegosiasikan perjanjian kontrak serta
@@ -36,7 +36,7 @@ const Home3 = () => {
             <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8  items-center mt-6">
               <div>
                 <p className="font-Lato font-bold text-white text-md mb-2 pl-12 pt-8">
-                  Hukum Properti
+                  Hukum Perdata
                 </p>
                 <p className="font-lato pl-12 pr-12 text-white font-light text-md text-justify mb-8 ">
                   Membantu klien dalam transaksi properti, sengketa properti,

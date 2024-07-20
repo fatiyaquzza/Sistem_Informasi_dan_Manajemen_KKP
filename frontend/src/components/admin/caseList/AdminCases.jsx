@@ -62,7 +62,7 @@ const AdminCases = () => {
         </thead>
         <tbody>
           {cases.map((casee, index) => (
-            <tr key={casee.id}>
+            <tr key={casee.id} className="mx-auto text-center">
               <td className="border px-6 py-4">{index + 1}</td>
               <td className="border px-6 py-4">{casee.caseName}</td>
               <td className="border px-6 py-4">{formatDate(casee.caseDate)}</td>
@@ -70,13 +70,13 @@ const AdminCases = () => {
                 <div className="flex justify-between">
                   <Link
                     to={`/admin-cases/edit/${casee.id}`}
-                    className="text-blue-500 hover:text-blue-70 border-blue-500 border-2 border-solid p-2 rounded hover:bg-blue-500 hover:text-white"
+                    className="hover:text-blue-500 hover:bg-white border-blue-500 border-2 border-solid p-2 rounded bg-blue-500 text-white"
                   >
                     <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
                   </Link>
                   <button
                     onClick={() => deleteLawyer(casee.id)}
-                    className="text-red-500  border-red-500 border-2 border-solid p-2 rounded hover:bg-red-500 hover:text-white"
+                    className="hover:text-red-500 hover:bg-white  border-red-500 border-2 border-solid p-2 rounded bg-red-500 text-white"
                   >
                     <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
                   </button>

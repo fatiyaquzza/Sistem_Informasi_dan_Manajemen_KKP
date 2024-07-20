@@ -1,4 +1,3 @@
-// models/Lawyer.js
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
 

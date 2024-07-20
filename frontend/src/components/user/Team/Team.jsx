@@ -67,9 +67,9 @@ const Team = () => {
               <img
                 src={lawyer.url}
                 alt={lawyer.name}
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[600px] object-cover border-solid border-2 border-brown"
               />
-              <div className="w-full bg-[#8A4F3D] text-white text-center py-4">
+              <div className="w-full bg-brown text-white text-center py-4">
                 <p className="text-2xl font-regular">{lawyer.name}</p>
                 <p className="text-xl font-light italic">{lawyer.position}</p>
               </div>

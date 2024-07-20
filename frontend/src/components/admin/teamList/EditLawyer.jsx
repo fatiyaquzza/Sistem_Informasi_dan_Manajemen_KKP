@@ -7,6 +7,8 @@ const EditLawyer = () => {
   const [position, setPosition] = useState("");
   const [about, setAbout] = useState("");
   const [description, setDescription] = useState("");
+  const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -21,19 +23,35 @@ const EditLawyer = () => {
       setPosition(response.data.position);
       setAbout(response.data.about);
       setDescription(response.data.description);
+      setPreview(response.data.image); // Assuming response includes image URL
     } catch (error) {
       console.error("Error fetching lawyer data:", error);
     }
   };
 
+  const loadImage = (e) => {
+    const image = e.target.files[0];
+    setFile(image);
+    setPreview(URL.createObjectURL(image));
+  };
+
   const updateLawyer = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("position", position);
+    formData.append("about", about);
+    formData.append("description", description);
+    if (file) {
+      formData.append("file", file);
+    }
+
     try {
-      await axios.patch(`http://localhost:5000/lawyers/${id}`, {
-        name,
-        position,
-        about,
-        description,
+      await axios.patch(`http://localhost:5000/lawyers/${id}`, formData, {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
       });
       navigate("/teamList");
     } catch (error) {
@@ -91,9 +109,33 @@ const EditLawyer = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>
+        <div className="field mb-4">
+          <label className="label text-gray-700 font-bold mb-2">Image</label>
+          <div className="control">
+            <div className="file">
+              <label className="file-label">
+                <input
+                  type="file"
+                  className="file-input"
+                  onChange={loadImage}
+                />
+                <span className="file-cta">
+                  <span className="file-label">Choose a file...</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        {preview && (
+          <figure className="image is-128x128 mb-4">
+            <img src={preview} alt="Preview Image" />
+          </figure>
+        )}
+
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-blue-500 hover:bg-blue-700 text-white mt-10 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Update
         </button>

@@ -30,7 +30,7 @@ const DetailTeam = () => {
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
 
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-7xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">{lawyer.name}</h1>
+          <h1 className="text-5xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">{lawyer.name}</h1>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
           <a href="#section2" className="p-2 text-white animate-bounce">
@@ -59,9 +59,9 @@ const DetailTeam = () => {
 
         <div className="flex flex-col items-center">
           <img
-            src={lawyer.url} // Replace with the correct path to the image
-            alt="Zulqaria Lahirya"
-            className="w-[400px] h-auto rounded-md"
+            src={lawyer.url}
+            alt={lawyer.name}
+            className="w-[500px] h-[500px] object-cover  rounded-md border-solid border-4 shadow-md border-brown"
           />
 
         </div>
@@ -70,9 +70,11 @@ const DetailTeam = () => {
         <p className="text-xl mt-2 text-gray-600 text-center">{lawyer.position}</p>
 
         <p className="text-2xl mt-8 font-semibold px-40">About</p>
-          <p className="mt-4 text-xl text-justify tet-black2 px-40">
+          <p className="mt-4 text-lg text-justify font-light text-black2 px-40">
           {lawyer.about}
-            <br /><br />
+          </p>
+
+          <p className="mt-5 text-lg text-justify font-light text-black2 px-40">
           {lawyer.description}
           </p>
 
