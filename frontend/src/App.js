@@ -17,8 +17,6 @@ import Footer from "./components/user/Footer";
 import CivilLaw from "./components/user/AreasOfExpertise/CivilLaw";
 import CriminalLaw from "./components/user/AreasOfExpertise/CriminalLaw";
 import AdminCases from "./components/admin/caseList/AdminCases";
-
-import "./index.css";
 import DetailCase from "./components/user/Cases/DetailCase";
 import CaseList from "./pages/CaseList";
 import TeamList from "./pages/TeamList";
@@ -27,6 +25,8 @@ import CaseEdit from "./pages/CaseEdit";
 import CaseAdd from "./pages/CaseAdd";
 import LawyerAdd from "./pages/LawyerAdd";
 import DetailTeam from "./components/user/Team/DetailTeam";
+
+import "./index.css";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,7 +40,21 @@ const ScrollToTop = () => {
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
-  
+
+  const generateLawyerRoutes = (count) => {
+    const routes = [];
+    for (let i = 1; i <= count; i++) {
+      routes.push(`/lawyers/${i}`);
+    }
+    return routes;
+  };
+  const generateCaseRoutes = (count) => {
+    const routes = [];
+    for (let i = 1; i <= count; i++) {
+      routes.push(`/admin-cases/${i}`);
+    }
+    return routes;
+  };
 
   const userRoutes = [
     "/",
@@ -51,8 +65,8 @@ const Layout = ({ children }) => {
     "/civil-law",
     "/criminal-law",
     "/detail-team",
-    "/admin-cases/:id",
-    "/lawyers/:id",
+    ...generateLawyerRoutes(100),
+    ...generateCaseRoutes(100),
   ];
   const adminRoutes = [
     "/dashboard",
@@ -66,7 +80,7 @@ const Layout = ({ children }) => {
     "/admin-cases/add",
     "/admin-cases/edit/:id",
     "/caseList",
-    "/teamList"
+    "/teamList",
   ];
 
   const showNavbarUser = userRoutes.includes(pathname);
@@ -84,7 +98,6 @@ const Layout = ({ children }) => {
 };
 
 function App() {
-
   return (
     <BrowserRouter basename="/">
       <ScrollToTop />
@@ -186,7 +199,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path="/lawyers/:id"
           element={
             <Layout>
@@ -210,7 +223,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path="/teamList"
           element={
             <Layout>
@@ -234,7 +247,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path="/admin-cases"
           element={
             <Layout>

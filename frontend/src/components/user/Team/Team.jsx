@@ -64,7 +64,7 @@ const Team = () => {
         id="section2"
         className="bg-primarywhite text-black px-4 md:px-16 py-12 md:py-24"
       >
-        <p className="font-Cinzel font-light text-3xl md:text-5xl text-center border-b py-4 md:py-6 lg:w-[800px] border-[#BCBCBC] mx-auto">
+        <p className="  ">
           Meet Our <span className="text-brown font-semibold">Team</span>
         </p>
 

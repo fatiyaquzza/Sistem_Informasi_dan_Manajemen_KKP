@@ -45,7 +45,7 @@ const ContactUs = () => {
           We're Here <span className="text-brown font-semibold">to Help</span>
         </p>
 
-        <p className="font-Lato font-light text-base md:text-lg lg:text-xl text-center mt-2 md:mt-8 px-4 md:px-16">
+        <p className="font-Lato font-light text-xl text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
           At our legal aid organization, we believe in making justice accessible
           to everyone. Whether you have a question, need legal assistance, or
           want to learn more about our services, we're here to help.
@@ -53,23 +53,23 @@ const ContactUs = () => {
       </section>
 
       <section className="flex flex-col items-center bg-primarywhite font-Lato px-12 md:px-20 lg:px-20">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-light mb-4">
           Office Hours :
         </h2>
         <div className="w-full px-4 md:px-8 lg:px-12">
-          <div className="bg-white shadow-md p-4 md:p-6 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+          <div className="bg-white shadow-md px-4 py-5 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
             <div className="flex justify-between text-sm md:text-base">
               <span>Monday - Friday</span>
               <span>9:00 AM - 5:00 PM</span>
             </div>
           </div>
-          <div className="bg-white shadow-md p-4 md:p-6 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+          <div className="bg-white shadow-md p-4 px-4 py-5 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
             <div className="flex justify-between text-sm md:text-base">
               <span>Saturday</span>
               <span>10:00 AM - 2:00 PM</span>
             </div>
           </div>
-          <div className="bg-white shadow-md p-4 md:p-6 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+          <div className="bg-white shadow-md p-4 px-4 py-5 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
             <div className="flex justify-between text-sm md:text-base">
               <span className="text-red-500">Sunday</span>
               <span className="text-red-500">Closed</span>

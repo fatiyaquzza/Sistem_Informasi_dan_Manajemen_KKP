@@ -48,9 +48,11 @@ const DetailCase = () => {
   return (
     <>
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl pb-10 border-white">Case</h1>
-          <h1 className="text-6xl bg-black2 font-bold border-2 border-solid px-20 py-10 border-white">
+        <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl pb-10 py-4 md:py-8 lg:py-10 border-white">
+            Case
+          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl bg-black2 font-bold border-2 border-solid px-10 py-5 md:px-20 md:py-10 border-white">
             {caseItem.caseName}
           </h1>
         </div>
@@ -74,9 +76,12 @@ const DetailCase = () => {
         </div>
       </section>
 
-      <section id="section2" className="bg-primarywhite text-black px-16 py-24 font-Lato">
-        <div className="flex">
-          <div className="w-1/4 pr-10">
+      <section
+        id="section2"
+        className="bg-primarywhite text-black px-12 6 py-12 md:py-24 font-Lato"
+      >
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/4 pr-0 md:pr-10 mb-10 md:mb-0">
             <p className="font-semibold">Last Updated:</p>
             <p>{formatDate(caseItem.caseDate)}</p>
 
@@ -86,7 +91,7 @@ const DetailCase = () => {
             {renderMember(caseItem.caseMember3, 3)}
             {renderMember(caseItem.caseMember4, 4)}
           </div>
-          <div className="w-3/4 text-justify">
+          <div className="w-full md:w-3/4 text-justify">
             <h2 className="text-3xl font-semibold">Background</h2>
             <p className="mt-4">{caseItem.caseAbout}</p>
             <h2 className="text-3xl font-semibold mt-10">Actions Taken</h2>
@@ -98,7 +103,7 @@ const DetailCase = () => {
         <div className="mt-10 flex justify-end">
           <button
             onClick={() => navigate("/cases")}
-            className="mt-10 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-6 py-3 hover:bg-transparent hover:text-brown"
+            className="mt-10 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-6 py-3 hover:bg-transparent hover:text-brown transition-colors duration-300"
           >
             Back to Cases
           </button>

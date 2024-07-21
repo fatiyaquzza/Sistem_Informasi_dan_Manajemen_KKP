@@ -39,9 +39,9 @@ const Home6 = () => {
   };
 
   return (
-    <section className="bg-brown text-white py-24 px-16 justify-center ">
+    <section className="bg-brown text-white py-24 px-8 md:px-16 justify-center">
       <div className="text-center">
-        <h2 className="text-5xl font-Cinzel font-bold mb-10">
+        <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-6 md:mb-10">
           Frequently Asked Question <br />
           (FAQ)
         </h2>
@@ -53,13 +53,15 @@ const Home6 = () => {
               className="w-full text-left flex justify-between items-center"
               onClick={() => handleToggle(index)}
             >
-              <span className="text-xl font-Lato my-4">{item.question}</span>
-              <span className="text-2xl">
+              <span className="text-lg md:text-xl font-Lato my-2 md:my-4">
+                {item.question}
+              </span>
+              <span className="text-xl md:text-2xl">
                 {activeIndex === index ? "-" : "+"}
               </span>
             </button>
             {activeIndex === index && (
-              <p className="mt-2 text-lg text-justify font-semibold">
+              <p className="mt-2 text-sm md:text-lg text-justify font-semibold">
                 {item.answer}
               </p>
             )}

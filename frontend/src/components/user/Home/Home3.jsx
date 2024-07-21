@@ -7,56 +7,58 @@ import { Link } from "react-router-dom";
 const Home3 = () => {
   return (
     <>
-      <section className=" bg-softgray px-16 py-24">
-        <div className="flex justify-between">
-          <div className="w-1/2">
-            <p className="font-Lato font-light text-md mb-2">
-              WHAT WE DO
-            </p>
-            <p className="font-Cinzel text-brown font-bold text-5xl mb-8">
-              OUR PRACTICE AREA
-            </p>
+<section className="bg-softgray py-12 md:py-24 px-8 md:px-16">
+  <div className="flex flex-col md:flex-row md:justify-between">
+    {/* Section 1 */}
+    <div className="w-full md:w-1/2 mb-10 md:mb-0">
+      <p className="text-sm md:text-md font-Lato font-light mb-2">
+        WHAT WE DO
+      </p>
+      <p className="text-3xl md:text-5xl font-Cinzel font-bold text-brown mb-6 md:mb-10">
+        OUR PRACTICE AREA
+      </p>
 
-            <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full pb-8">
-              <p className="font-Lato font-bold text-white text-md mb-2 px-12 pt-8">
-                Hukum Pidana
-              </p>
-              <p className="font-lato w-full px-12 text-white font-light text-md text-justify mb-8">
-                Membuat, meninjau, dan menegosiasikan perjanjian kontrak serta
-                menyelesaikan perselisihan yang muncul dari kontrak.
-              </p>
-              <div className="flex justify-center">
-                <img src={home3_1} alt="lawyer" className="w-[300px] h-[260px]" />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-1/2 ml-10">
-            
-            <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8  items-center mt-6">
-              <div>
-                <p className="font-Lato font-bold text-white text-md mb-2 pl-12 pt-8">
-                  Hukum Perdata
-                </p>
-                <p className="font-lato pl-12 pr-12 text-white font-light text-md text-justify mb-8 ">
-                  Membantu klien dalam transaksi properti, sengketa properti,
-                  sewa-menyewa, dan hak kepemilikan tanah.
-                </p>
-              </div>
-
-              <div className="flex justify-center pr-12 pl-8">
-                <img src={home3_3} alt="lawyer" className="w-[300px] h-[260px]" />
-              </div>
-            </div>
-          </div>
+      <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full pb-8">
+        <p className="font-Lato font-bold text-white text-md mb-2 px-8 pt-8 md:px-12">
+          Hukum Pidana
+        </p>
+        <p className="font-Lato px-8 md:px-12 text-white font-light text-md text-justify mb-8">
+          Membuat, meninjau, dan menegosiasikan perjanjian kontrak serta
+          menyelesaikan perselisihan yang muncul dari kontrak.
+        </p>
+        <div className="flex justify-center">
+          <img src={home3_1} alt="Hukum Pidana" className="w-[300px] h-[260px] md:w-[400px] md:h-[300px]" />
         </div>
+      </div>
+    </div>
 
-        <div className="flex justify-center mt-10">
-        <Link to="/expertise" className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6">
-        See All Practice Area
-        </Link>
+    {/* Section 2 */}
+    <div className="w-full md:w-1/2 md:ml-10">
+      <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 items-center mt-6">
+        <p className="font-Lato font-bold text-white text-md mb-2 pl-8 pt-8 md:pl-12">
+          Hukum Perdata
+        </p>
+        <p className="font-Lato pl-8 md:pl-12 pr-8 md:pr-12 text-white font-light text-md text-justify mb-8">
+          Membantu klien dalam transaksi properti, sengketa properti,
+          sewa-menyewa, dan hak kepemilikan tanah.
+        </p>
+        <div className="flex justify-center px-8 md:px-12">
+          <img src={home3_3} alt="Hukum Perdata" className="w-[300px] h-[260px] md:w-[400px] md:h-[300px]" />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+
+  <div className="flex justify-center mt-10">
+    <Link
+      to="/expertise"
+      className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6"
+    >
+      See All Practice Area
+    </Link>
+  </div>
+</section>
+
     </>
   );
 };
