@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import moment from "moment-timezone";
 
 const EditCase = () => {
   const [caseName, setCaseName] = useState("");
@@ -17,35 +18,42 @@ const EditCase = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getCaseById();
-  });
+    const getCaseById = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/admin-cases/${id}`
+        );
+        const caseData = response.data;
 
-  const getCaseById = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:5000/admin-cases/${id}`
-      );
-      const caseDateFormatted = response.data.caseDate.split("T")[0]; // Pastikan format tanggal sesuai
-      setCaseName(response.data.caseName);
-      setCaseDate(caseDateFormatted); // Atur format tanggal yang benar
-      setCaseAbout(response.data.caseAbout);
-      setCaseAction(response.data.caseAction);
-      setCaseOutcome(response.data.caseOutcome);
-      setCaseMember1(response.data.caseMember1);
-      setCaseMember2(response.data.caseMember2);
-      setCaseMember3(response.data.caseMember3);
-      setCaseMember4(response.data.caseMember4);
-    } catch (error) {
-      console.error("Error fetching case data:", error);
-    }
-  };
+        const caseDateFormatted = moment(caseData.caseDate).format(
+          "YYYY-MM-DD"
+        );
+
+        setCaseName(caseData.caseName);
+        setCaseDate(caseDateFormatted);
+        setCaseAbout(caseData.caseAbout);
+        setCaseAction(caseData.caseAction);
+        setCaseOutcome(caseData.caseOutcome);
+        setCaseMember1(caseData.caseMember1);
+        setCaseMember2(caseData.caseMember2);
+        setCaseMember3(caseData.caseMember3);
+        setCaseMember4(caseData.caseMember4);
+      } catch (error) {
+        console.error("Error fetching case data:", error);
+      }
+    };
+
+    getCaseById();
+  }, [id]);
 
   const updateCase = async (e) => {
     e.preventDefault();
     try {
+      const caseDateISO = moment(caseDate).toISOString();
+
       await axios.patch(`http://localhost:5000/admin-cases/${id}`, {
         caseName,
-        caseDate,
+        caseDate: caseDateISO,
         caseAbout,
         caseAction,
         caseOutcome,
@@ -63,7 +71,10 @@ const EditCase = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Edit Case</h1>
-      <form onSubmit={updateCase} className="max-w-full p-10 shadow-md rounded bg-white">
+      <form
+        onSubmit={updateCase}
+        className="max-w-full p-10 shadow-md rounded bg-white"
+      >
         <div className="mb-4">
           <label
             htmlFor="caseName"

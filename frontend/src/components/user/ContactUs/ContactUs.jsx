@@ -9,20 +9,22 @@ const ContactUs = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${contactus})`, opacity: 0.2 }}
         ></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-7xl font-bold border-b py-10 border-white">Contact Us</h1>
-          <p className="text-xl mt-5 font-light">
+        <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">
+            Contact Us
+          </h1>
+          <p className="text-lg md:text-xl lg:text-2xl mt-3 md:mt-5 font-light">
             Here to Assist. Ready to Listen. Committed to Your Cause.
           </p>
         </div>
-        <div className="absolute bottom-10 w-full flex justify-center">
+        <div className="absolute bottom-5 md:bottom-10 w-full flex justify-center">
           <a href="#section2" className="p-2 text-white animate-bounce">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="w-10 h-10"
+              className="w-8 h-8 md:w-10 md:h-10"
             >
               <path
                 strokeLinecap="round"
@@ -35,35 +37,40 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section id="section2" className="bg-primarywhite text-black px-16 py-24">
-        <p className="font-Cinzel font-light text-5xl text-center border-b py-6 border-[#BCBCBC] w-[800px] mx-auto">
+      <section
+        id="section2"
+        className="bg-primarywhite text-black px-4 md:px-8 lg:px-16 py-12 lg:py-24"
+      >
+        <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-96 lg:w-[600px] py-4 md:py-6 lg:py-8 border-[#BCBCBC] mx-auto">
           We're Here <span className="text-brown font-semibold">to Help</span>
         </p>
-        
-        <p className="font-Lato font-light text-xl text-center mx-64 mt-10">
+
+        <p className="font-Lato font-light text-base md:text-lg lg:text-xl text-center mt-2 md:mt-8 px-4 md:px-16">
           At our legal aid organization, we believe in making justice accessible
           to everyone. Whether you have a question, need legal assistance, or
           want to learn more about our services, we're here to help.
         </p>
       </section>
 
-      <section className="flex flex-col items-center bg-primarywhite font-Lato px-20">
-        <h2 className="text-2xl font-semibold mb-4">Office Hours :</h2>
-        <div className="w-full px-12">
-          <div className="bg-white shadow-md p-6 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
-            <div className="flex justify-between">
+      <section className="flex flex-col items-center bg-primarywhite font-Lato px-12 md:px-20 lg:px-20">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+          Office Hours :
+        </h2>
+        <div className="w-full px-4 md:px-8 lg:px-12">
+          <div className="bg-white shadow-md p-4 md:p-6 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+            <div className="flex justify-between text-sm md:text-base">
               <span>Monday - Friday</span>
               <span>9:00 AM - 5:00 PM</span>
             </div>
           </div>
-          <div className="bg-white shadow-md p-6 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
-            <div className="flex justify-between">
+          <div className="bg-white shadow-md p-4 md:p-6 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+            <div className="flex justify-between text-sm md:text-base">
               <span>Saturday</span>
               <span>10:00 AM - 2:00 PM</span>
             </div>
           </div>
-          <div className="bg-white shadow-md p-6 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
-            <div className="flex justify-between">
+          <div className="bg-white shadow-md p-4 md:p-6 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
+            <div className="flex justify-between text-sm md:text-base">
               <span className="text-red-500">Sunday</span>
               <span className="text-red-500">Closed</span>
             </div>
@@ -71,8 +78,8 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section className="bg-primarywhite py-24 px-12 font-Lato">
-        <div className="container mx-auto flex flex-wrap justify-center">
+      <section className="bg-primarywhite py-12 md:py-16 lg:py-24 px-4 md:px-8 lg:px-12 font-Lato">
+        <div className="container mx-auto flex flex-col md:flex-row justify-center">
           <div className="w-full md:w-1/2 p-4">
             <div className="relative">
               <iframe
@@ -88,14 +95,18 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 p-4">
-            <div className="bg-brown text-white p-6">
-              <h3 className="text-2xl font-semibold mb-4">Visit Us :</h3>
+            <div className="bg-brown text-white p-4 md:p-6">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+                Visit Us :
+              </h3>
               <p>Jl. Teuku Nyak Arief No.441</p>
               <p>Kopelma Darussalam</p>
               <p>Kec. Syiah Kuala, Kota Banda Aceh, Aceh 23111</p>
             </div>
-            <div className="bg-brown text-white p-6 mt-10">
-              <h3 className="text-2xl font-semibold mb-4">Reach out to us :</h3>
+            <div className="bg-brown text-white p-4 md:p-6 mt-6 md:mt-10">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+                Reach out to us :
+              </h3>
               <p>Phone: (123) 456-7890</p>
               <p>Email: contact@legalhelp.org</p>
             </div>

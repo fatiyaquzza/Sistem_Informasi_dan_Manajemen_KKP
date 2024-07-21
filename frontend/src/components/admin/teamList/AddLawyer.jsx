@@ -117,8 +117,8 @@ const AddLawyer = () => {
         </div>
 
         {preview ? (
-          <figure className="image is-128x128">
-            <img src={preview} alt="Preview Image" />
+          <figure>
+            <img src={preview} alt="Preview Image" className="w-40 h-fit" />
           </figure>
         ) : (
           ""
