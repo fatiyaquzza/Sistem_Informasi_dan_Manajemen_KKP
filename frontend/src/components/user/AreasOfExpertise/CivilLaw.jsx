@@ -36,9 +36,9 @@ const CivilLaw = () => {
 
       <section
         id="section2"
-        className="bg-primarywhite text-black px-16 py-12 md:py-24 font-Lato"
+        className="bg-primarywhite text-black px-16 py-6 md:py-8 font-Lato"
       >
-        <p className="text-lg md:text-xl lg:text-2xl mt-4 font-light text-justify">
+        <p className="text-lg md:text-lg lg:text-xl mt-4 font-light text-justify">
           Criminal law deals with behavior that is or can be construed as an
           offense against the public, society, or the state—even if the
           immediate victim is an individual. This area of law includes offenses
@@ -46,13 +46,13 @@ const CivilLaw = () => {
           that disrupt public order and safety.
         </p>
 
-        <div className="flex flex-col md:flex-row mt-10">
+        <div className="flex flex-col md:flex-row mt-8">
           <div className="w-full md:w-1/2 px-4 md:px-8 lg:px-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mt-8">
               Our Civil Law Services Include:
             </h2>
-            <ol className="list-decimal ml-4 md:ml-6 mt-4 text-lg md:text-xl lg:text-2xl">
-              <li className="mt-6">
+            <ol className="list-decimal ml-4 md:ml-6 mt-4 text-lg md:text-lg lg:text-xl">
+              <li className="mt-5">
                 Theft and Fraud
                 <ul className="list-disc mt-2 text-base md:text-lg lg:text-xl">
                   <li>
@@ -140,8 +140,8 @@ const CivilLaw = () => {
             </ol>
           </div>
 
-          <div className="w-full md:w-1/2 px-4 md:px-8 lg:px-10 mt-10 md:mt-0">
-            <img src={home1} alt="lawyer" className="w-full h-auto  shadow-md opacity-80" />
+          <div className="w-full md:w-1/2 px-20 md:px-20 lg:px-20 mt-10 md:mt-0">
+            <img src={home1} alt="lawyer" className="w-full h-auto  shadow-md" />
           </div>
         </div>
 

@@ -64,7 +64,7 @@ const Team = () => {
         id="section2"
         className="bg-primarywhite text-black px-4 md:px-16 py-12 md:py-24"
       >
-        <p className="  ">
+        <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-[800px] py-4 md:py-6 border-[#BCBCBC] mx-auto">
           Meet Our <span className="text-brown font-semibold">Team</span>
         </p>
 
@@ -81,7 +81,7 @@ const Team = () => {
                     className="w-full h-[200px] md:h-[400px] lg:h-[500px] object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-sm md:text-xl lg:text-2xl flex items-center">
+                    <p className="text-white text-sm md:text-lg lg:text-xl flex items-center">
                       <span>See Details</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

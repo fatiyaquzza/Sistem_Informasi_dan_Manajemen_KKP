@@ -13,7 +13,7 @@ const ContactUs = () => {
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">
             Contact Us
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl mt-3 md:mt-5 font-light">
+          <p className="text-lg md:text-lg lg:text-xl mt-3 md:mt-5 font-light">
             Here to Assist. Ready to Listen. Committed to Your Cause.
           </p>
         </div>

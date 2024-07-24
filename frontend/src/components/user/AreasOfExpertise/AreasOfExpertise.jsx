@@ -19,7 +19,7 @@ const AreasOfExpertise = () => {
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">Areas of Expertise</h1>
-          <p className="text-lg md:text-xl lg:text-2xl mt-3 md:mt-5 font-light">
+          <p className="text-lg md:text-lg lg:text-xl mt-3 md:mt-5 font-light">
             Here to Assist. Ready to Listen. Committed to Your Cause.
           </p>
         </div>
@@ -75,7 +75,7 @@ const AreasOfExpertise = () => {
                 </p>
               </div>
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white text-sm md:text-xl lg:text-2xl flex items-center">
+                <p className="text-white text-sm md:text-lg lg:text-xl flex items-center">
                   <span>See Details</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

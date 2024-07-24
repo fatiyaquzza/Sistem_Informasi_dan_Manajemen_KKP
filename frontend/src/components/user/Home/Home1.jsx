@@ -12,7 +12,7 @@ const Home1 = () => {
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">Welcome</h1>
-          <p className="text-lg md:text-xl lg:text-2xl mt-3 md:mt-5 font-light">
+          <p className="text-lg md:text-lg lg:text-xl mt-3 md:mt-5 font-light">
             for clients with a stake in federal legislation or regulatory
             guidance
           </p>
@@ -49,7 +49,7 @@ const Home1 = () => {
             <p className="font-Cinzel text-brown font-bold text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-10">
               LKBH SATA AL-FAQIH
             </p>
-            <p className="font-Lato font-light text-base md:text-xl lg:text-2xl w-full pr-0 md:pr-10 text-justify">
+            <p className="font-Lato font-light text-base md:text-lg lg:text-xl w-full pr-2 md:pr-10 text-justify">
               merupakan sebuah organisasi yang berkomitmen untuk membantu
               masyarakat dalam memperoleh hak-haknya secara layak. Sebagai
               payung hukum yang dapat diandalkan, LKBH Sata Al-Faqih memberikan
