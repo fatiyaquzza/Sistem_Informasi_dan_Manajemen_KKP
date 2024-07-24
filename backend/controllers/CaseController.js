@@ -1,35 +1,46 @@
 import Case from "../models/case.js";
+import Lawyer from "../models/lawyer.js";
 
-export const getCases = async (req, res) => {
-    try {
-        const response = await Case.findAll();
-        res.json(response);
-    } catch (error) {
-        res.json({ message: error.message });
-    }
-};
 
 export const createCase = async (req, res) => {
-    try {
-        await Case.create(req.body);
-        res.json({ "message": "Case Created" });
-    } catch (error) {
-        res.json({ message: error.message });
-    }
+  try {
+    const { caseName, caseDate, caseAbout, caseAction, caseOutcome, teamMembers } = req.body;
+    const newCase = await Case.create({
+      caseName,
+      caseDate,
+      caseAbout,
+      caseAction,
+      caseOutcome,
+      teamMembers // Menyimpan nama pengacara
+    });
+    res.status(201).json(newCase);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Get all cases with team members
+export const getCases = async (req, res) => {
+  try {
+    const cases = await Case.findAll();
+    res.status(200).json(cases);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 export const getCaseById = async (req, res) => {
-    try {
-      const casee = await Case.findByPk(req.params.id);
-      if (casee) {
-        res.status(200).json(casee);
-      } else {
-        res.status(404).json({ message: "Case not found" });
-      }
-    } catch (error) {
-      res.status(500).json({ message: error.message });
+  try {
+    const casee = await Case.findByPk(req.params.id);
+    if (casee) {
+      res.status(200).json(casee);
+    } else {
+      res.status(404).json({ message: "Case not found" });
     }
-  };
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
   
   export const updateCase = async (req, res) => {
     try {

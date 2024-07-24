@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCaseById } from "../../../service/CaseService";
 import { FaUser } from "react-icons/fa";
-import member1 from "../../../images/member1.jpg"; 
 
 const DetailCase = () => {
   const { id } = useParams();
@@ -13,7 +12,13 @@ const DetailCase = () => {
     const fetchCase = async () => {
       try {
         const data = await getCaseById(id);
-        setCaseItem(data);
+
+        // Uraikan JSON string jika diperlukan
+        const caseWithParsedMembers = {
+          ...data,
+          teamMembers: JSON.parse(data.teamMembers || "[]") // Uraikan JSON string
+        };
+        setCaseItem(caseWithParsedMembers);
       } catch (error) {
         console.error("Error fetching case:", error);
       }
@@ -34,10 +39,10 @@ const DetailCase = () => {
   const renderMember = (member, index) => {
     if (member) {
       return (
-        <div key={index} className="mt-2  p-2 w-[300px] text-white flex items-center border-solid border-brown border-2">
+        <div key={index} className="mt-2 p-2 w-[300px] text-white flex items-center border-solid border-brown border-2">
           <FaUser className="mr-2 w-12 h-12 bg-brown p-2" /> {/* Ikon pengguna */}
           <div className="text-brown font-semibold pl-1 capitalize">
-          {member}
+            {member}
           </div>
         </div>
       );
@@ -86,10 +91,11 @@ const DetailCase = () => {
             <p>{formatDate(caseItem.caseDate)}</p>
 
             <p className="mt-5 font-semibold">Members:</p>
-            {renderMember(caseItem.caseMember1, 1)}
-            {renderMember(caseItem.caseMember2, 2)}
-            {renderMember(caseItem.caseMember3, 3)}
-            {renderMember(caseItem.caseMember4, 4)}
+            {caseItem.teamMembers.length > 0 ? (
+              caseItem.teamMembers.map((member, index) => renderMember(member, index + 1))
+            ) : (
+              <p>No members</p>
+            )}
           </div>
           <div className="w-full md:w-3/4 text-justify">
             <h2 className="text-3xl font-semibold">Background</h2>

@@ -3,7 +3,7 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const casee = db.define('Cases', {
+const Case = db.define('Cases', {
     caseName: {
         type: DataTypes.STRING,
         allowNull: false
@@ -21,21 +21,13 @@ const casee = db.define('Cases', {
     caseOutcome: {
         type: DataTypes.TEXT
     },
-    caseMember1: {
-        type: DataTypes.STRING
-    },
-    caseMember2: {
-        type: DataTypes.STRING
-    },
-    caseMember3: {
-        type: DataTypes.STRING
-    },
-    caseMember4: {
-        type: DataTypes.STRING
-    },
-
+    teamMembers: {
+        type: DataTypes.JSON, // You can also use DataTypes.STRING to store a comma-separated list of IDs
+        allowNull: false
+    }
 }, {
     freezeTableName: true
 });
 
-export default casee;
+
+export default Case;

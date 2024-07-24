@@ -14,11 +14,17 @@ const AdminCases = () => {
   const getCases = async () => {
     try {
       const response = await axios.get("http://localhost:5000/admin-cases");
-      setCases(response.data);
+      // Parsing JSON string jika diperlukan
+      const casesWithParsedMembers = response.data.map(casee => ({
+        ...casee,
+        teamMembers: JSON.parse(casee.teamMembers) // Uraikan JSON string
+      }));
+      setCases(casesWithParsedMembers);
     } catch (error) {
       console.error("Error fetching cases:", error);
     }
   };
+  
 
   const deleteLawyer = async (id) => {
     try {
@@ -56,35 +62,44 @@ const AdminCases = () => {
               Date
             </th>
             <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
+              Team Members
+            </th>
+            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
               Actions
             </th>
           </tr>
         </thead>
         <tbody>
-          {cases.map((casee, index) => (
-            <tr key={casee.id} className="mx-auto text-center">
-              <td className="border px-6 py-4">{index + 1}</td>
-              <td className="border px-6 py-4">{casee.caseName}</td>
-              <td className="border px-6 py-4">{formatDate(casee.caseDate)}</td>
-              <td className="border px-6 py-4">
-                <div className="flex justify-between">
-                  <Link
-                    to={`/admin-cases/edit/${casee.id}`}
-                    className="hover:text-blue-500 hover:bg-white border-blue-500 border-2 border-solid p-2 rounded bg-blue-500 text-white"
-                  >
-                    <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
-                  </Link>
-                  <button
-                    onClick={() => deleteLawyer(casee.id)}
-                    className="hover:text-red-500 hover:bg-white  border-red-500 border-2 border-solid p-2 rounded bg-red-500 text-white"
-                  >
-                    <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
-                  </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+  {cases.map((casee, index) => (
+    <tr key={casee.id} className="mx-auto text-center">
+      <td className="border px-6 py-4">{index + 1}</td>
+      <td className="border px-6 py-4">{casee.caseName}</td>
+      <td className="border px-6 py-4">{formatDate(casee.caseDate)}</td>
+      <td className="border px-6 py-4">
+        {Array.isArray(casee.teamMembers) && casee.teamMembers.length > 0
+          ? casee.teamMembers.join(", ")
+          : "No members"}
+      </td>
+      <td className="border px-6 py-4">
+        <div className="flex justify-between">
+          <Link
+            to={`/admin-cases/edit/${casee.id}`}
+            className="hover:text-blue-500 hover:bg-white border-blue-500 border-2 border-solid p-2 rounded bg-blue-500 text-white"
+          >
+            <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
+          </Link>
+          <button
+            onClick={() => deleteLawyer(casee.id)}
+            className="hover:text-red-500 hover:bg-white border-red-500 border-2 border-solid p-2 rounded bg-red-500 text-white"
+          >
+            <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   );
