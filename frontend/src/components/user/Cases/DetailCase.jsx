@@ -39,7 +39,7 @@ const DetailCase = () => {
   const renderMember = (member, index) => {
     if (member) {
       return (
-        <div key={index} className="mt-2 p-2 w-[300px] text-white flex items-center border-solid border-brown border-2">
+        <div key={index} className="mt-2 p-2 w-full lg:w-[300px] text-white flex items-center border-solid border-brown border-2">
           <FaUser className="mr-2 w-12 h-12 bg-brown p-2" /> {/* Ikon pengguna */}
           <div className="text-brown font-semibold pl-1 capitalize">
             {member}
@@ -97,7 +97,7 @@ const DetailCase = () => {
               <p>No members</p>
             )}
           </div>
-          <div className="w-full md:w-3/4 text-justify">
+          <div className="w-full lg:w-3/4 text-justify">
             <h2 className="text-3xl font-semibold">Background</h2>
             <p className="mt-4">{caseItem.caseAbout}</p>
             <h2 className="text-3xl font-semibold mt-10">Actions Taken</h2>

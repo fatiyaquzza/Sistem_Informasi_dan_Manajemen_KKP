@@ -1,7 +1,6 @@
 import React from "react";
 import home3_1 from "../../../images/home3-1.png";
-import home3_2 from "../../../images/home3-2.png";
-import home3_3 from "../../../images/home3-3.png";
+import home3_3 from "../../../images/civilRights.png";
 import { Link } from "react-router-dom";
 
 const Home3 = () => {
@@ -20,11 +19,10 @@ const Home3 = () => {
 
       <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full pb-8">
         <p className="font-Lato font-bold text-white text-md mb-2 px-8 pt-8 md:px-12">
-          Hukum Pidana
+          Civil Law
         </p>
         <p className="font-Lato px-8 md:px-12 text-white font-light text-md text-justify mb-8">
-          Membuat, meninjau, dan menegosiasikan perjanjian kontrak serta
-          menyelesaikan perselisihan yang muncul dari kontrak.
+        Civil law governs disputes between individuals or organizations, focusing on resolving issues such as contracts, property, and family matters.
         </p>
         <div className="flex justify-center">
           <img src={home3_1} alt="Hukum Pidana" className="w-[300px] h-[260px] md:w-[400px] md:h-[300px]" />
@@ -36,11 +34,10 @@ const Home3 = () => {
     <div className="w-full md:w-1/2 md:ml-10">
       <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 items-center mt-6">
         <p className="font-Lato font-bold text-white text-md mb-2 pl-8 pt-8 md:pl-12">
-          Hukum Perdata
+        Criminal Law
         </p>
         <p className="font-Lato pl-8 md:pl-12 pr-8 md:pr-12 text-white font-light text-md text-justify mb-8">
-          Membantu klien dalam transaksi properti, sengketa properti,
-          sewa-menyewa, dan hak kepemilikan tanah.
+        Criminal law deals with offenses against the state, establishing legal penalties for actions that harm public safety and order.
         </p>
         <div className="flex justify-center px-8 md:px-12">
           <img src={home3_3} alt="Hukum Perdata" className="w-[300px] h-[260px] md:w-[400px] md:h-[300px]" />

@@ -44,20 +44,13 @@ const Home1 = () => {
         <div className="w-full md:w-7/12 flex items-center mb-8 md:mb-0">
           <div className="text-center md:text-left">
             <p className="font-Lato font-light text-base md:text-md mb-2">
-              SIAPAKAH KAMI
+              WHO ARE WE
             </p>
             <p className="font-Cinzel text-brown font-bold text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-10">
               LKBH SATA AL-FAQIH
             </p>
             <p className="font-Lato font-light text-base md:text-lg lg:text-xl w-full pr-2 md:pr-10 text-justify">
-              merupakan sebuah organisasi yang berkomitmen untuk membantu
-              masyarakat dalam memperoleh hak-haknya secara layak. Sebagai
-              payung hukum yang dapat diandalkan, LKBH Sata Al-Faqih memberikan
-              bantuan hukum kepada pihak-pihak yang membutuhkan, menangani
-              berbagai kasus dan permasalahan hukum mereka. Dengan tim yang
-              profesional dan berdedikasi, LKBH Sata Al-Faqih berusaha
-              memastikan keadilan dan perlindungan hukum bagi seluruh lapisan
-              masyarakat.
+            We are an organization committed to helping the community obtain their rights properly. As a reliable legal umbrella, LKBH Sata Al-Faqih provides legal assistance to those in need, handling various legal cases and issues. With a professional and dedicated team, LKBH Sata Al-Faqih strives to ensure justice and legal protection for all members of society
             </p>
           </div>
         </div>
