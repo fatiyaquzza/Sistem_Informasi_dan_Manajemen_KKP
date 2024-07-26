@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaPhone, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -7,18 +8,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white py-8 px-4 md:px-16">
+    <footer className="bg-black text-white py-8 px-5 md:px-16">
       <div className="flex flex-col md:flex-row justify-between border-b border-gray-400 pb-4 md:px-12">
         <p className="text-xl font-Cinzel font-bold mb-4 md:mb-0">
           LKBH Sata Al-Faqih
         </p>
-        <button className="border-2 border-solid border-brown hover:border-brown hover:text-softgray hover:bg-transparent bg-brown text-white text-sm font-semibold py-2 px-6 mb-2 md:mb-0">
-          Make an Appointment
-        </button>
+        <Link to="/contact" className="border-2 border-solid border-brown hover:border-brown hover:text-softgray hover:bg-transparent bg-brown text-white text-sm font-semibold py-2 px-6 mb-2 md:mb-0">
+          Hubungi Kami
+        </Link>
       </div>
       <div className="container mx-auto flex flex-wrap justify-between font-Lato mt-6">
         <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
-          <h2 className="text-lg font-semibold">Address</h2>
+          <h2 className="text-lg font-semibold">Alamat</h2>
           <p className="mt-4 not-italic text-opacity-60 text-white">
             Jl. Sultan Malikul Saleh, No. 42, Lamlagang, Kec. Banda Raya, Kota Banda
             Aceh, Aceh 23117  <span className="font-semibold text-white text-opacity-80"> (Kantor Banda Aceh)</span>
@@ -84,10 +85,13 @@ const Footer = () => {
         </div>
 
         <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
-          <h2 className="text-lg font-semibold">Contact us</h2>
+          <h2 className="text-lg font-semibold">Kontak</h2>
           <ul className="mt-4 space-y-2 text-opacity-60 text-white">
-            <li>+62 852 7799 9249</li>
-            <li>
+            <li className="flex items-center">
+              <FaPhone className="mr-2" /> +62 852 7799 9249
+            </li>
+            <li className="flex items-center">
+              <FaEnvelope className="mr-2" />
               <a
                 href="mailto:sata.alfaqih@gmail.com"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
@@ -98,26 +102,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-full lg:w-1/4 flex justify-center lg:justify-start mt-4 lg:mt-0 space-x-4">
-          <a
-            href="#"
-            className="hover:text-gray-400 text-white text-opacity-50"
-          >
-            <i className="fab fa-instagram fa-2x"></i>
-          </a>
-          <a
-            href="#"
-            className="hover:text-gray-400 text-white text-opacity-50"
-          >
-            <i className="fab fa-facebook fa-2x"></i>
-          </a>
-          <a
-            href="#"
-            className="hover:text-gray-400 text-white text-opacity-50"
-          >
-            <i className="fab fa-youtube fa-2x"></i>
-          </a>
-        </div>
+        
       </div>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mt-8">
         <p className="text-white text-opacity-40 text-center md:text-left w-full md:w-auto mb-4 md:mb-0">

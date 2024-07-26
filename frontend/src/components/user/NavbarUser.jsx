@@ -29,7 +29,7 @@ const NavbarUser = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition duration-500 ease-in-out ${navBg} px-4 md:px-12`}
+      className={`fixed w-full z-50 transition duration-500 ease-in-out ${navBg} px-5 md:px-12`}
     >
       <div className="flex justify-between items-center h-16  md:px-12">
         <Link to="/" className={`text-xl font-Cinzel font-bold ${navText}`}>
@@ -83,35 +83,42 @@ const NavbarUser = () => {
             className="px-6 py-2 hover:bg-gray-100"
             onClick={toggleNav}
           >
-            Home
+            Beranda
+          </Link>
+          <Link
+            to="/about-us"
+            className="px-6 py-2 hover:bg-gray-100"
+            onClick={toggleNav}
+          >
+            Tentang Kami
           </Link>
           <Link
             to="/team"
             className="px-6 py-2 hover:bg-gray-100"
             onClick={toggleNav}
           >
-            Our Team
+            Tim Kami
           </Link>
           <Link
             to="/expertise"
             className="px-6 py-2 hover:bg-gray-100"
             onClick={toggleNav}
           >
-            Areas of Expertise
+            Lingkup Jasa Hukum
           </Link>
           <Link
             to="/cases"
             className="px-6 py-2 hover:bg-gray-100"
             onClick={toggleNav}
           >
-            Cases
+            Berita & Artikel
           </Link>
           <Link
             to="/contact"
             className="px-6 py-2 hover:bg-gray-100"
             onClick={toggleNav}
           >
-            Contact Us
+            Kontak
           </Link>
         </div>
       </div>
