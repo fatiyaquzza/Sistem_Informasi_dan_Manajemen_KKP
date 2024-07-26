@@ -7,7 +7,7 @@ const Home6 = () => {
     {
       question: "Bagaimana cara mengajukan permohonan bantuan hukum?",
       answer:
-        "Anda bisa mengajukan permohonan bantuan hukum dengan mengisi formulir di situs kami atau mengunjungi kantor kami secara langsung.",
+        "Anda bisa mengajukan permohonan bantuan hukum dengan mengunjungi kantor kami secara langsung.",
     },
     {
       question:
@@ -30,7 +30,7 @@ const Home6 = () => {
     {
       question: "Bagaimana saya bisa mengetahui perkembangan kasus saya?",
       answer:
-        "Anda bisa mengetahui perkembangan kasus Anda melalui portal kami atau dengan menghubungi tim kami secara langsung.",
+        "Anda bisa mengetahui perkembangan kasus Anda dengan menghubungi tim kami secara langsung.",
     },
   ];
 

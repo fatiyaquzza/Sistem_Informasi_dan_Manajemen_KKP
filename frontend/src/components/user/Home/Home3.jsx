@@ -9,12 +9,12 @@ const Home3 = () => {
 <section className="bg-softgray py-12 md:py-24 px-8 md:px-16">
   <div className="flex flex-col md:flex-row md:justify-between">
     {/* Section 1 */}
-    <div className="w-full md:w-1/2 mb-10 md:mb-0">
-      <p className="text-sm md:text-md font-Lato font-light mb-2">
-        WHAT WE DO
+    <div className="w-full md:w-1/2 mb-10 ">
+      <p className="text-sm md:text-md font-Lato font-light mb-2 md:text-start text-center">
+      APA YANG KAMI KERJAKAN
       </p>
-      <p className="text-3xl md:text-5xl font-Cinzel font-bold text-brown mb-6 md:mb-10">
-        OUR PRACTICE AREA
+      <p className="text-3xl md:text-5xl font-Cinzel font-bold text-brown mb-6 md:mb-10 md:text-start text-center">
+        Layanan Hukum Kami
       </p>
 
       <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full pb-8">
@@ -32,8 +32,8 @@ const Home3 = () => {
 
     {/* Section 2 */}
     <div className="w-full md:w-1/2 md:ml-10">
-      <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 items-center mt-6">
-        <p className="font-Lato font-bold text-white text-md mb-2 pl-8 pt-8 md:pl-12">
+      <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 items-center mt-0 md:mt-2">
+        <p className="font-Lato font-bold text-white text-md mb-2 pl-8 pt-0 md:pt-8 md:pl-12">
         Criminal Law
         </p>
         <p className="font-Lato pl-8 md:pl-12 pr-8 md:pr-12 text-white font-light text-md text-justify mb-8">

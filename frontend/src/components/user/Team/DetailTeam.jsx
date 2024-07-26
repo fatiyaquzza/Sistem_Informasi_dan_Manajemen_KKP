@@ -54,9 +54,9 @@ const DetailTeam = () => {
 
       <section
         id="section2"
-        className="bg-primarywhite text-black px-4 md:px-16 py-12 md:py-24 font-Lato"
+        className="bg-primarywhite text-black py-12 md:py-24 font-Lato"
       >
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center px-10 md:px-0">
           <img
             src={lawyer.url}
             alt={lawyer.name}
@@ -64,25 +64,25 @@ const DetailTeam = () => {
           />
         </div>
 
-        <p className="text-2xl md:text-3xl mt-4 md:mt-8 font-semibold text-center">
+        <p className="text-2xl px-10 md:text-3xl mt-4 md:mt-8 font-semibold text-center">
           {lawyer.name}
         </p>
         <p className="text-lg md:text-xl mt-2 text-gray-600 text-center">
           {lawyer.position}
         </p>
 
-        <p className="text-xl md:text-2xl mt-8 font-semibold px-12 md:px-40">
+        <p className="text-xl md:text-2xl mt-8 font-semibold px-10 md:px-40">
           About
         </p>
-        <p className="mt-4 text-base md:text-lg text-justify font-light text-black2 px-12 md:px-40 ">
+        <p className="mt-4 text-base md:text-lg text-justify font-light text-black2 px-10 md:px-40 ">
           {lawyer.about}
         </p>
 
-        <p className="mt-5 text-base md:text-lg text-justify font-light text-black2 px-12 md:px-40 ">
+        <p className="mt-5 text-base md:text-lg text-justify font-light text-black2 px-10 md:px-40 ">
           {lawyer.description}
         </p>
 
-        <div className="px-12 md:px-40 mt-10">
+        <div className="px-10 md:px-40 mt-10">
           <button
             onClick={() => navigate("/team")}
             className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm md:text-base font-semibold mb-2 px-4 md:px-6 py-2 md:py-3 hover:bg-transparent hover:text-brown transition"

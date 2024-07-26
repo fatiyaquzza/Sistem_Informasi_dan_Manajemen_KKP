@@ -117,10 +117,10 @@ const AddLawyer = () => {
         </div>
 
         {preview ? (
-          <figure>
-            <img src={preview} alt="Preview Image" className="w-40 h-fit" />
-          </figure>
-        ) : (
+          
+            <img src={preview} alt="Preview" className="w-40 h-fit" />
+        
+        ) : ( 
           ""
         )}
         <button

@@ -11,8 +11,8 @@ const Home1 = () => {
           style={{ backgroundImage: `url(${home0})`, opacity: 0.2 }}
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">Welcome</h1>
-          <p className="text-lg md:text-lg lg:text-xl mt-3 md:mt-5 font-light">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[600px]">Welcome</h1>
+          <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
             for clients with a stake in federal legislation or regulatory
             guidance
           </p>
@@ -39,18 +39,18 @@ const Home1 = () => {
 
       <section
         id="section2"
-        className="h-auto bg-softgray text-black flex flex-col md:flex-row justify-center px-16 py-12 md:py-24"
+        className="h-auto bg-softgray text-black flex flex-col md:flex-row justify-center px-8 md:px-16 py-12 md:py-24"
       >
         <div className="w-full md:w-7/12 flex items-center mb-8 md:mb-0">
           <div className="text-center md:text-left">
-            <p className="font-Lato font-light text-base md:text-md mb-2">
-              WHO ARE WE
+            <p className="font-Lato font-light text-sm md:text-md mb-2">
+              SIAPAKAH KAMI
             </p>
-            <p className="font-Cinzel text-brown font-bold text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-10">
+            <p className="font-Cinzel text-brown font-bold text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-10">
               LKBH SATA AL-FAQIH
             </p>
-            <p className="font-Lato font-light text-base md:text-lg lg:text-xl w-full pr-2 md:pr-10 text-justify">
-            We are an organization committed to helping the community obtain their rights properly. As a reliable legal umbrella, LKBH Sata Al-Faqih provides legal assistance to those in need, handling various legal cases and issues. With a professional and dedicated team, LKBH Sata Al-Faqih strives to ensure justice and legal protection for all members of society
+            <p className="font-Lato font-light text-base md:text-base lg:text-lg w-full pr-2 md:pr-10 text-justify">
+            Lembaga Konsultasi dan Bantuan Hukum (LKBH) SATA Alfaqih adalah Lembaga Bantuan Hukum yang memberi layanan Bantuan Hukum berdasarkan Undang-Undang Nomor 16 Tahun 2011 Tentang Bantuan Hukum, yang didirikan di Banda Aceh sejak Tahun 2019. Bantuan Hukum yang diberikan terdiri dari masalah hukum keperdataan, pidana, dan tata usaha negara baik litigasi maupun nonlitigasi, meliputi menjalankan kuasa, mendampingi, mewakili, membela, dan/atau melakukan tindakan hukum lain untuk kepentingan hukum Penerima Bantuan Hukum.
             </p>
           </div>
         </div>

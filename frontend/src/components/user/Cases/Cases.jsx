@@ -57,10 +57,10 @@ const Cases = () => {
           style={{ backgroundImage: `url(${Case})`, opacity: 0.2 }}
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[600px]">
             Cases
           </h1>
-          <p className="text-lg md:text-lg lg:text-xl mt-3 md:mt-5 font-light">
+          <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
             Here to Assist. Ready to Listen. Committed to Your Cause.
           </p>
         </div>

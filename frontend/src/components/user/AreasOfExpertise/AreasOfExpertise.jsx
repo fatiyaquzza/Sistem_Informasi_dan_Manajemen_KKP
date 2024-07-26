@@ -6,8 +6,10 @@ import civilRights from "../../../images/civilRights.png";
 
 const AreasOfExpertise = () => {
   const specializations = [
-    { name: "Criminal Law", image: familyLaw, link: "/criminal-law" },
-    { name: "Civil Law", image: civilRights, link: "/civil-law" },
+    { name: "Litigasi", image: familyLaw, link: "/criminal-law" },
+    { name: "Non Litigasi", image: civilRights, link: "/civil-law" },
+    { name: "Konsultasi Hukum", image: familyLaw, link: "/criminal-law" },
+    { name: "Mediasi", image: civilRights, link: "/civil-law" },
   ];
 
   return (
@@ -18,8 +20,8 @@ const AreasOfExpertise = () => {
           style={{ backgroundImage: `url(${expertise})`, opacity: 0.2 }}
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white">Areas of Expertise</h1>
-          <p className="text-lg md:text-lg lg:text-xl mt-3 md:mt-5 font-light">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[800px]">Layanan Hukum Kami</h1>
+          <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
             Here to Assist. Ready to Listen. Committed to Your Cause.
           </p>
         </div>
@@ -45,14 +47,11 @@ const AreasOfExpertise = () => {
 
       <section id="section2" className="bg-primarywhite text-black px-16 py-12 md:py-24">
         <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-[800px] py-4 md:py-6  border-[#BCBCBC] mx-auto">
-          Our Legal{" "}
-          <span className="text-brown font-semibold">Specializations</span>
+        Spesialisasi {" "}
+          <span className="text-brown font-semibold">Hukum Kami</span>
         </p>
-        <p className="font-Lato font-light text-xl text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
-          At LKBH Sata Al-Faqih, we offer a wide range of legal services to meet
-          the diverse needs of our clients. Our team of skilled attorneys is
-          committed to providing expert guidance and representation in various
-          areas of law.
+        <p className="font-Lato font-light text-lg text-center md:text-black hidden md:block mx-52 mt-10 md:mt-10">
+        Di LKBH Sata Al-Faqih, kami menawarkan berbagai layanan hukum untuk memenuhi beragam kebutuhan klien kami. Tim pengacara kami yang terampil berkomitmen untuk memberikan panduan dan representasi ahli di berbagai bidang hukum.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 mt-10 md:gap-16 md:mt-16">

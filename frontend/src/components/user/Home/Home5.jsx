@@ -23,9 +23,9 @@ const Home5 = () => {
   return (
     <>
       <section className="bg-softgray text-center py-12 md:py-24 px-8 md:px-16">
-        <p className="text-sm md:text-md font-Lato font-light mb-2">OUR TEAM</p>
+        <p className="text-sm md:text-md font-Lato font-light mb-2">TIM KAMI</p>
         <h2 className="text-3xl md:text-5xl font-Cinzel font-bold text-brown mb-6 md:mb-10">
-          Meet Our Team
+        Kenali Tim Kami
         </h2>
         <div className="flex flex-col md:flex-row justify-around font-Lato">
           {selectedLawyers.map((lawyer) => (

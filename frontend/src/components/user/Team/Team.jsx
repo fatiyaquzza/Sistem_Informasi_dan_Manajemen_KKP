@@ -33,10 +33,10 @@ const Team = () => {
           style={{ backgroundImage: `url(${team1})`, opacity: 0.2 }}
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
-          <h1 className="text-4xl md:text-7xl font-bold border-b py-4 md:py-10 border-white ">
-            Our Team
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[600px] ">
+            Tim Kami
           </h1>
-          <p className="text-lg md:text-xl mt-4 md:mt-5 font-light">
+          <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
             Expert litigators. Trusted advisors. Your champions in justice.
           </p>
         </div>
@@ -65,7 +65,7 @@ const Team = () => {
         className="bg-primarywhite text-black px-4 md:px-16 py-12 md:py-24"
       >
         <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-[800px] py-4 md:py-6 border-[#BCBCBC] mx-auto">
-          Meet Our <span className="text-brown font-semibold">Team</span>
+          Kenali <span className="text-brown font-semibold">Tim Kami</span>
         </p>
 
         <div
@@ -82,7 +82,7 @@ const Team = () => {
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-sm md:text-lg lg:text-xl flex items-center">
-                      <span>See Details</span>
+                      <span>Selengkapnya</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

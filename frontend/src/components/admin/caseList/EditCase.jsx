@@ -9,15 +9,23 @@ const EditCase = () => {
   const [caseAbout, setCaseAbout] = useState("");
   const [caseAction, setCaseAction] = useState("");
   const [caseOutcome, setCaseOutcome] = useState("");
-  const [caseMember1, setCaseMember1] = useState("");
-  const [caseMember2, setCaseMember2] = useState("");
-  const [caseMember3, setCaseMember3] = useState("");
-  const [caseMember4, setCaseMember4] = useState("");
+  const [lawyers, setLawyers] = useState([]);
+  const [teamMembers, setTeamMembers] = useState([]);
   const { id } = useParams();
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Fetch lawyers for dropdown
+    const fetchLawyers = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/lawyers");
+        setLawyers(response.data);
+      } catch (error) {
+        console.error("Error fetching lawyers:", error);
+      }
+    };
+
     const getCaseById = async () => {
       try {
         const response = await axios.get(
@@ -34,15 +42,15 @@ const EditCase = () => {
         setCaseAbout(caseData.caseAbout);
         setCaseAction(caseData.caseAction);
         setCaseOutcome(caseData.caseOutcome);
-        setCaseMember1(caseData.caseMember1);
-        setCaseMember2(caseData.caseMember2);
-        setCaseMember3(caseData.caseMember3);
-        setCaseMember4(caseData.caseMember4);
+
+        // Parse and set team members
+        setTeamMembers(JSON.parse(caseData.teamMembers));
       } catch (error) {
         console.error("Error fetching case data:", error);
       }
     };
 
+    fetchLawyers();
     getCaseById();
   }, [id]);
 
@@ -57,15 +65,27 @@ const EditCase = () => {
         caseAbout,
         caseAction,
         caseOutcome,
-        caseMember1,
-        caseMember2,
-        caseMember3,
-        caseMember4,
+        teamMembers: teamMembers.map((member) => member.name),
       });
       navigate("/caseList");
     } catch (error) {
       console.error("Error updating case:", error);
     }
+  };
+
+  const addTeamMember = () => {
+    setTeamMembers([...teamMembers, { name: "" }]);
+  };
+
+  const removeTeamMember = (index) => {
+    const newTeamMembers = teamMembers.filter((_, i) => i !== index);
+    setTeamMembers(newTeamMembers);
+  };
+
+  const handleTeamMemberChange = (index, name) => {
+    const newTeamMembers = [...teamMembers];
+    newTeamMembers[index] = { name }; // Store lawyer name
+    setTeamMembers(newTeamMembers);
   };
 
   return (
@@ -154,64 +174,41 @@ const EditCase = () => {
         </div>
         <div className="mb-4">
           <label
-            htmlFor="caseMember1"
+            htmlFor="teamMembers"
             className="block text-gray-700 font-bold mb-2"
           >
-            Member 1
+            Team Members
           </label>
-          <input
-            id="caseMember1"
-            type="text"
-            value={caseMember1}
-            required
-            onChange={(e) => setCaseMember1(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="caseMember2"
-            className="block text-gray-700 font-bold mb-2"
+          {teamMembers.map((member, index) => (
+            <div key={index} className="flex items-center mb-2">
+              <select
+                value={member.name}
+                onChange={(e) => handleTeamMemberChange(index, e.target.value)}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+              >
+                <option value="">Select a lawyer</option>
+                {lawyers.map((lawyer) => (
+                  <option key={lawyer.id} value={lawyer.name}>
+                    {lawyer.name}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                onClick={() => removeTeamMember(index)}
+                className="ml-2 text-red-500 hover:text-red-700"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+          <button
+            type="button"
+            onClick={addTeamMember}
+            className="text-blue-500 hover:text-blue-700"
           >
-            Member 2
-          </label>
-          <input
-            id="caseMember2"
-            type="text"
-            value={caseMember2}
-            onChange={(e) => setCaseMember2(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="caseMember3"
-            className="block text-gray-700 font-bold mb-2"
-          >
-            Member 3
-          </label>
-          <input
-            id="caseMember3"
-            type="text"
-            value={caseMember3}
-            onChange={(e) => setCaseMember3(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="caseMember4"
-            className="block text-gray-700 font-bold mb-2"
-          >
-            Member 4
-          </label>
-          <input
-            id="caseMember4"
-            type="text"
-            value={caseMember4}
-            onChange={(e) => setCaseMember4(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
-          />
+            Add Member
+          </button>
         </div>
         <button
           type="submit"
