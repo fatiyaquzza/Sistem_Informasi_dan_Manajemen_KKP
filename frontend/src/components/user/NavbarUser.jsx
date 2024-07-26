@@ -53,19 +53,22 @@ const NavbarUser = () => {
         </div>
         <div className="hidden md:flex space-x-8 font-Lato font-semibold">
           <Link to="/" className={`hover:text-gray-500 ${navText}`}>
-            Home
+            Beranda
+          </Link>
+          <Link to="/about-us" className={`hover:text-gray-500 ${navText}`}>
+            Tentang Kami
           </Link>
           <Link to="/team" className={`hover:text-gray-500 ${navText}`}>
-            Our Team
+            Tim Kami
           </Link>
           <Link to="/expertise" className={`hover:text-gray-500 ${navText}`}>
-            Areas of Expertise
+            Lingkup Jasa Hukum
           </Link>
           <Link to="/cases" className={`hover:text-gray-500 ${navText}`}>
-            Cases
+            Berita & Artikel
           </Link>
           <Link to="/contact" className={`hover:text-gray-500 ${navText}`}>
-            Contact Us
+            Kontak
           </Link>
         </div>
       </div>

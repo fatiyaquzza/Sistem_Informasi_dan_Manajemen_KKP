@@ -20,8 +20,12 @@ const Footer = () => {
         <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
           <h2 className="text-lg font-semibold">Address</h2>
           <p className="mt-4 not-italic text-opacity-60 text-white">
-            Jl. Sultan Malikul Saleh, Lamlagang, Kec. Banda Raya, Kota Banda
-            Aceh, Aceh 23117
+            Jl. Sultan Malikul Saleh, No. 42, Lamlagang, Kec. Banda Raya, Kota Banda
+            Aceh, Aceh 23117  <span className="font-semibold text-white text-opacity-80"> (Kantor Banda Aceh)</span>
+          </p>
+
+          <p className="mt-4 not-italic text-opacity-60 text-white">
+          Desa Blang Muko, Kec. Kuala, Kab. Nagan Raya, Aceh  <span className="font-semibold text-white text-opacity-80"> (Kantor Nagan Raya)</span>
           </p>
         </div>
 
@@ -33,7 +37,15 @@ const Footer = () => {
                 to="/"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
               >
-                Home
+                Beranda
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about-us"
+                className="hover:underline text-white opacity-50 hover:opacity-90"
+              >
+                Tentang Kami
               </Link>
             </li>
             <li>
@@ -41,7 +53,7 @@ const Footer = () => {
                 to="/team"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
               >
-                Our Team
+                Tim Kami
               </Link>
             </li>
             <li>
@@ -49,7 +61,7 @@ const Footer = () => {
                 to="/expertise"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
               >
-                Areas of Expertise
+                Lingkup Jasa Hukum
               </Link>
             </li>
             <li>
@@ -57,7 +69,7 @@ const Footer = () => {
                 to="/cases"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
               >
-                Cases
+                Berita & Artikel
               </Link>
             </li>
             <li>
@@ -65,7 +77,7 @@ const Footer = () => {
                 to="/contact"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
               >
-                Contact Us
+                Kontak
               </Link>
             </li>
           </ul>
@@ -74,13 +86,13 @@ const Footer = () => {
         <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
           <h2 className="text-lg font-semibold">Contact us</h2>
           <ul className="mt-4 space-y-2 text-opacity-60 text-white">
-            <li>+1 891 989-11-91</li>
+            <li>+62 852 7799 9249</li>
             <li>
               <a
-                href="mailto:help@logoipsum.com"
+                href="mailto:sata.alfaqih@gmail.com"
                 className="hover:underline text-white opacity-50 hover:opacity-90"
               >
-                help@logoipsum.com
+                sata.alfaqih@gmail.com
               </a>
             </li>
           </ul>

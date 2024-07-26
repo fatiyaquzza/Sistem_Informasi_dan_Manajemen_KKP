@@ -27,6 +27,7 @@ import LawyerAdd from "./pages/LawyerAdd";
 import DetailTeam from "./components/user/Team/DetailTeam";
 
 import "./index.css";
+import About from "./components/user/AboutUs/About";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -65,6 +66,7 @@ const Layout = ({ children }) => {
     "/civil-law",
     "/criminal-law",
     "/detail-team",
+    "/about-us",
     ...generateLawyerRoutes(100),
     ...generateCaseRoutes(100),
   ];
@@ -268,6 +270,14 @@ function App() {
           element={
             <Layout>
               <CaseList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about-us"
+          element={
+            <Layout>
+              <About />
             </Layout>
           }
         />
