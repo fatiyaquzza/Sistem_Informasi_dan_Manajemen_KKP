@@ -13,7 +13,7 @@ const Footer = () => {
         <p className="text-xl font-Cinzel font-bold mb-4 md:mb-0">
           LKBH Sata Al-Faqih
         </p>
-        <Link to="/contact" className="border-2 border-solid border-brown hover:border-brown hover:text-softgray hover:bg-transparent bg-brown text-white text-sm font-semibold py-2 px-6 mb-2 md:mb-0">
+        <Link to="/contact" className="border-2 border-solid border-brown hover:border-brown hover:text-softgray hover:bg-transparent bg-brown text-white text-sm font-semibold py-2 px-6 mb-2 md:mb-0 text-center">
           Hubungi Kami
         </Link>
       </div>

@@ -14,8 +14,6 @@ import Cases from "./components/user/Cases/Cases";
 import ContactUs from "./components/user/ContactUs/ContactUs";
 import NavbarUser from "./components/user/NavbarUser";
 import Footer from "./components/user/Footer";
-import CivilLaw from "./components/user/AreasOfExpertise/CivilLaw";
-import CriminalLaw from "./components/user/AreasOfExpertise/CriminalLaw";
 import AdminCases from "./components/admin/caseList/AdminCases";
 import DetailCase from "./components/user/Cases/DetailCase";
 import CaseList from "./pages/CaseList";
@@ -28,6 +26,10 @@ import DetailTeam from "./components/user/Team/DetailTeam";
 
 import "./index.css";
 import About from "./components/user/AboutUs/About";
+import Litigasi from "./components/user/AreasOfExpertise/Litigasi";
+import NonLitigasi from "./components/user/AreasOfExpertise/NonLitigasi";
+import KonsultasiHukum from "./components/user/AreasOfExpertise/KonsultasiHukum";
+import Mediasi from "./components/user/AreasOfExpertise/Mediasi";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -63,9 +65,11 @@ const Layout = ({ children }) => {
     "/expertise",
     "/cases",
     "/contact",
-    "/civil-law",
-    "/criminal-law",
+    "/litigasi",
+    "/non-litigasi",
     "/detail-team",
+    "/konsultasi-hukum",
+    "/mediasi",
     "/about-us",
     ...generateLawyerRoutes(100),
     ...generateCaseRoutes(100),
@@ -146,18 +150,42 @@ function App() {
           }
         />
         <Route
-          path="/civil-law"
+          path="/litigasi"
           element={
             <Layout>
-              <CivilLaw />
+              <Litigasi />
             </Layout>
           }
         />
         <Route
-          path="/criminal-law"
+          path="/non-litigasi"
           element={
             <Layout>
-              <CriminalLaw />
+              <NonLitigasi />
+            </Layout>
+          }
+        />
+         <Route
+          path="/konsultasi-hukum"
+          element={
+            <Layout>
+              <KonsultasiHukum />
+            </Layout>
+          }
+        />
+         <Route
+          path="/mediasi"
+          element={
+            <Layout>
+              <Mediasi />
+            </Layout>
+          }
+        />
+         <Route
+          path="/non-litigasi"
+          element={
+            <Layout>
+              <NonLitigasi />
             </Layout>
           }
         />

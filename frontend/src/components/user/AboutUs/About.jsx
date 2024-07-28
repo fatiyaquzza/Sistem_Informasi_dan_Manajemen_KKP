@@ -2,6 +2,10 @@ import React from "react";
 import struktur from "../../../images/struktur.png";
 import about1 from "../../../images/home0.png";
 import logo from "../../../images/logo.png";
+import office from "../../../images/aceh_depan.jpg";
+import meetingRoom from "../../../images/aceh_meet.jpg";
+import advocateParalegal from "../../../images/aceh_mp.jpg";
+import { MdLocationOn } from "react-icons/md";
 
 const About = () => {
   return (
@@ -196,6 +200,57 @@ const About = () => {
             alt="lawyer"
             className="w-full max-w-lg md:max-w-xl lg:max-w-3xl mb-8 md:mb-0"
           />
+        </div>
+      </section>
+
+      <section id="about6" className="bg-white text-black py-12 md:py-24 px-8 md:px-16 font-Lato">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-brown mb-12 font-Cinzel">
+          Fasilitas
+        </h2>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-12">
+            <div className="relative">
+              <img
+                src={office}
+                alt="Kantor Banda Aceh"
+                className="w-full h-[600px] shadow-lg object-center"
+              />
+              <div className="absolute top-0 left-0 flex items-center gap-2 p-2 bg-white bg-opacity-75">
+                <MdLocationOn className="text-red-600" size={20} />
+                <span className="text-gray-700 font-semibold">
+                  Kantor Banda Aceh
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={meetingRoom}
+                alt="Meeting Room"
+                className="w-full h-[300px] object-cover shadow-lg mb-4"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                Meeting Room
+              </h3>
+              <p className="text-gray-600">Ruang rapat tim</p>
+            </div>
+
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={advocateParalegal}
+                alt="Ruang Kerja Advokat & Paralegal"
+                className="w-full h-[300px] object-cover shadow-lg mb-4"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                Ruang Kerja Advokat & Paralegal
+              </h3>
+              <p className="text-gray-600">
+                Menyiapkan dokumen hukum dan pekerjaan lainnya
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>

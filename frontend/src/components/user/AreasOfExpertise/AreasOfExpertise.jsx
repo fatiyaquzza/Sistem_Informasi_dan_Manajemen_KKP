@@ -6,10 +6,10 @@ import civilRights from "../../../images/civilRights.png";
 
 const AreasOfExpertise = () => {
   const specializations = [
-    { name: "Litigasi", image: familyLaw, link: "/criminal-law" },
-    { name: "Non Litigasi", image: civilRights, link: "/civil-law" },
-    { name: "Konsultasi Hukum", image: familyLaw, link: "/criminal-law" },
-    { name: "Mediasi", image: civilRights, link: "/civil-law" },
+    { name: "Litigasi", image: familyLaw, link: "/litigasi" },
+    { name: "Non Litigasi", image: civilRights, link: "/non-litigasi" },
+    { name: "Konsultasi Hukum", image: familyLaw, link: "/konsultasi-hukum" },
+    { name: "Mediasi", image: civilRights, link: "/mediasi" },
   ];
 
   return (
@@ -54,7 +54,7 @@ const AreasOfExpertise = () => {
         Di LKBH Sata Al-Faqih, kami menawarkan berbagai layanan hukum untuk memenuhi beragam kebutuhan klien kami. Tim pengacara kami yang terampil berkomitmen untuk memberikan panduan dan representasi ahli di berbagai bidang hukum.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 mt-10 md:gap-16 md:mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-10 md:gap-16 md:mt-16">
       {specializations.map((specialization, index) => (
         <div
           key={index}
@@ -65,17 +65,17 @@ const AreasOfExpertise = () => {
               <img
                 src={specialization.image}
                 alt={specialization.name}
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-4">
-                <p className="text-white text-lg sm:text-2xl md:text-3xl font-semibold font-Lato">
+                <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold font-Lato">
                   {specialization.name}
                 </p>
               </div>
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="text-white text-sm md:text-lg lg:text-xl flex items-center">
-                  <span>See Details</span>
+                  <span>Selengkapnya</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
