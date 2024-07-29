@@ -20,8 +20,7 @@ const About = () => {
             TENTANG KAMI
           </h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-            for clients with a stake in federal legislation or regulatory
-            guidance
+          Kami siap membantu Anda dengan solusi hukum terbaik.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">

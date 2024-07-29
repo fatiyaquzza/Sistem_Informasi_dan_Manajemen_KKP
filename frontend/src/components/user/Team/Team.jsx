@@ -37,7 +37,7 @@ const Team = () => {
             TIM KAMI
           </h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-            Expert litigators. Trusted advisors. Your champions in justice.
+          Kenali tim ahli kami yang siap memberikan solusi hukum terbaik.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">

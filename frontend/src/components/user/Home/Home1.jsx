@@ -13,8 +13,7 @@ const Home1 = () => {
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[600px]">SELAMAT DATANG</h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-            for clients with a stake in federal legislation or regulatory
-            guidance
+          Untuk klien yang memiliki kepentingan dalam legislasi federal atau panduan regulasi.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">

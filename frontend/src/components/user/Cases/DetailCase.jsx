@@ -54,10 +54,10 @@ const DetailCase = () => {
     <>
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl pb-10 py-4 md:py-8 lg:py-10 border-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl pb-10 py-4 md:py-8 lg:py-10 border-white">
             Case
           </h1>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl bg-black2 font-bold border-2 border-solid px-10 py-5 md:px-20 md:py-10 border-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl bg-black2 font-bold border-2 border-solid px-10 py-5 md:px-20 md:py-10 border-white">
             {caseItem.caseName}
           </h1>
         </div>
@@ -109,9 +109,9 @@ const DetailCase = () => {
         <div className="mt-10 flex justify-end">
           <button
             onClick={() => navigate("/cases")}
-            className="mt-10 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-6 py-3 hover:bg-transparent hover:text-brown transition-colors duration-300"
+            className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-5 py-3 hover:bg-transparent hover:text-brown transition"
           >
-            Back to Cases
+            Kembali ke Berita & Artikel
           </button>
         </div>
       </section>

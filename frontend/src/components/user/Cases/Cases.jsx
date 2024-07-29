@@ -61,7 +61,7 @@ const Cases = () => {
             BERITA & ARTIKEL
           </h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-            Here to Assist. Ready to Listen. Committed to Your Cause.
+          Dapatkan informasi terbaru dan artikel penting mengenai hukum.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
@@ -89,12 +89,11 @@ const Cases = () => {
         className="bg-primarywhite text-black px-16 py-12 md:py-24"
       >
         <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-[800px] py-4 md:py-6 border-[#BCBCBC] mx-auto">
-          Recent and Ongoing{" "}
-          <span className="text-brown font-semibold">Cases</span>
+        Kumpulan Berita dan 
+          <span className="text-brown font-semibold"> Artikel</span>
         </p>
-        <p className="font-Lato font-light text-xl text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
-          Below are examples of some of the notable cases we have handled,
-          showcasing our dedication and expertise across various areas of law.
+        <p className="font-Lato font-light text-lg text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
+        Berikut adalah beberapa berita dan artikel terbaru yang mencerminkan perkembangan terkini dan wawasan mendalam kami dalam berbagai isu hukum
         </p>
 
         <div className="mt-10 md:mt-16 relative">
@@ -136,7 +135,7 @@ const Cases = () => {
                       to={`/admin-cases/${caseItem.id}`}
                       className="px-5 py-2 text-sm bg-brown text-white shadow-md border-solid border-2 border-brown hover:bg-transparent hover:text-brown transition duration-300"
                     >
-                      Read More
+                      Selengkapnya
                     </Link>
                   </div>
                 </div>

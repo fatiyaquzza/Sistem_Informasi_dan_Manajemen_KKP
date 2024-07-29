@@ -20,9 +20,9 @@ const AreasOfExpertise = () => {
           style={{ backgroundImage: `url(${expertise})`, opacity: 0.2 }}
         ></div>
         <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6 md:md-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[800px]">LAYANAN HUKUM KAMI</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold border-b py-4 md:py-8 lg:py-10 border-white w-fit md:w-[800px]">LINGKUP JASA HUKUM</h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-            Here to Assist. Ready to Listen. Committed to Your Cause.
+          Kami menyediakan berbagai jasa hukum untuk membantu masalah Anda.
           </p>
         </div>
         <div className="absolute bottom-5 md:bottom-10 w-full flex justify-center">

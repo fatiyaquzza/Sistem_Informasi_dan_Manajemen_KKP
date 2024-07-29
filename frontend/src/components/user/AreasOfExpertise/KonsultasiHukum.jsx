@@ -83,9 +83,9 @@ const KonsultasiHukum = () => {
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => navigate("/expertise")}
-            className="px-5 py-3 text-sm bg-brown text-white shadow-md border-solid border-2 border-brown hover:bg-transparent hover:text-brown transition duration-300 font-semibold"
+            className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-5 py-3 hover:bg-transparent hover:text-brown transition"
           >
-            Back to Areas of Expertise
+            Kembali ke Lingkup Jasa Hukum
           </button>
         </div>
       </section>

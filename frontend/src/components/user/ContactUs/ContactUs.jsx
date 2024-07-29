@@ -14,7 +14,7 @@ const ContactUs = () => {
             KONTAK
           </h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-            Here to Assist. Ready to Listen. Committed to Your Cause.
+          Hubungi kami untuk layanan atau informasi tambahan yang Anda perlukan.
           </p>
         </div>
         <div className="absolute bottom-5 md:bottom-10 w-full flex justify-center">
@@ -41,20 +41,18 @@ const ContactUs = () => {
         id="section2"
         className="bg-primarywhite text-black px-5 md:px-8 lg:px-16 py-12 lg:py-24"
       >
-        <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-96 lg:w-[600px] py-4 md:py-6 lg:py-8 border-[#BCBCBC] mx-auto">
-          We're Here <span className="text-brown font-semibold">to Help</span>
+        <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-96 lg:w-[800px] py-4 md:py-6 lg:py-8 border-[#BCBCBC] mx-auto">
+        Kami Siap  <span className="text-brown font-semibold">Membantu Anda</span>
         </p>
 
-        <p className="font-Lato font-light text-xl text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
-          At our legal aid organization, we believe in making justice accessible
-          to everyone. Whether you have a question, need legal assistance, or
-          want to learn more about our services, we're here to help.
+        <p className="font-Lato font-light text-lg text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
+        Di lembaga bantuan hukum kami, kami berkomitmen untuk menjadikan keadilan dapat diakses oleh semua orang. Jika Anda memiliki pertanyaan, membutuhkan bantuan hukum, atau ingin mengetahui lebih lanjut tentang layanan kami, kami siap membantu Anda.
         </p>
       </section>
 
       <section className="flex flex-col items-center bg-primarywhite font-Lato px-8 md:px-16 lg:px-16">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-light mb-4">
-          Office Hours :
+          Jam Kerja :
         </h2>
         <div className="w-full px-4">
           <div className="bg-white shadow-md px-4 py-5 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
@@ -80,7 +78,7 @@ const ContactUs = () => {
 
       <section className="bg-primarywhite pt-12 md:pt-16 lg:pt-24 font-Lato px-8 md:px-20">
       <div className="bg-brown w-full py-10 ">
-        <p className="text-center text-base md:text-xl text-white">Reach out to us through the following channels:</p>
+        <p className="text-center text-base md:text-xl text-white">Hubungi kami melalui cara berikut:</p>
         <p className="text-center text-base md:text-xl font-light text-white mt-4">Phone: +62 852 7799 9249</p>
         <p className="text-center text-base md:text-xl font-light text-white">Email: sata.alfaqih@gmail.com</p>
 

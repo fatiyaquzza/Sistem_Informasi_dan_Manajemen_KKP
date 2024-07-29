@@ -85,9 +85,9 @@ const DetailTeam = () => {
         <div className="px-10 md:px-40 mt-10">
           <button
             onClick={() => navigate("/team")}
-            className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm md:text-base font-semibold mb-2 px-4 md:px-6 py-2 md:py-3 hover:bg-transparent hover:text-brown transition"
+            className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-5 py-3 hover:bg-transparent hover:text-brown transition"
           >
-            Back to Our Team
+            Kembali ke Tim Kami
           </button>
         </div>
       </section>
