@@ -32,7 +32,7 @@ const Home2 = () => {
         alt="Established"
         className="mx-auto mb-4 w-16 h-16 mt-4 transition-transform duration-300"
       />
-      <h4 className="text-xl font-semibold mb-2 italic">2020</h4>
+      <h4 className="text-xl font-semibold mb-2 italic">2019</h4>
       <p className="opacity-70 mb-4">Established</p>
     </div>
 
@@ -54,8 +54,8 @@ const Home2 = () => {
         alt="Branches"
         className="mx-auto mb-4 w-16 h-16 mt-4 transition-transform duration-300"
       />
-      <h4 className="text-xl font-semibold mb-2 italic">21</h4>
-      <p className="opacity-70 mb-4">Branches</p>
+      <h4 className="text-xl font-semibold mb-2 italic">2</h4>
+      <p className="opacity-70 mb-4">Cabang</p>
     </div>
 
     {/* Clients card */}

@@ -1,13 +1,55 @@
 import React from "react";
 import struktur from "../../../images/struktur.png";
-import about1 from "../../../images/home0.png";
+import about1 from "../../../images/aboutus.png";
 import logo from "../../../images/logo.png";
+
 import office from "../../../images/aceh_depan.jpg";
+import office2 from "../../../images/nagan_depan.jpg";
 import meetingRoom from "../../../images/aceh_meet.jpg";
 import advocateParalegal from "../../../images/aceh_mp.jpg";
+import nagan1 from "../../../images/nagan_01.jpg";
+import nagan2 from "../../../images/nagan_02.jpg";
+import nagan3 from "../../../images/nagan_03.jpg";
+import nagan4 from "../../../images/nagan_04.jpg";
+
+import doc1 from "../../../images/doc01.jpg";
+import doc2 from "../../../images/doc02.jpg";
+import doc3 from "../../../images/doc03.jpg";
+import doc4 from "../../../images/doc04.jpg";
+import doc5 from "../../../images/doc05.jpg";
+import doc6 from "../../../images/doc06.jpg";
+
+
 import { MdLocationOn } from "react-icons/md";
 
 const About = () => {
+  const data = [
+    {
+      imageLink: doc1,
+      description: "Proses Persidangan ",
+    },
+    {
+      imageLink: doc3,
+      description: "Penyuluhan Hukum",
+    },
+    {
+      imageLink: doc5,
+      description: "Penyuluhan Hukum",
+    },
+    {
+      imageLink: doc2,
+      description: "Proses Persidangan ",
+    },
+    {
+      imageLink: doc4,
+      description: "Penyuluhan Hukum",
+    },
+    {
+      imageLink: doc6,
+      description: "Penyuluhan Hukum",
+    },
+  ];
+
   return (
     <>
       <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
@@ -20,7 +62,7 @@ const About = () => {
             TENTANG KAMI
           </h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-          Kami siap membantu Anda dengan solusi hukum terbaik.
+            Kami siap membantu Anda dengan solusi hukum terbaik.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
@@ -202,7 +244,10 @@ const About = () => {
         </div>
       </section>
 
-      <section id="about6" className="bg-white text-black py-12 md:py-24 px-8 md:px-16 font-Lato">
+      <section
+        id="about6"
+        className="bg-white text-black py-12 md:py-24 px-8 md:px-16 font-Lato"
+      >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-brown mb-12 font-Cinzel">
           Fasilitas
         </h2>
@@ -249,6 +294,115 @@ const About = () => {
                 Menyiapkan dokumen hukum dan pekerjaan lainnya
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto pt-20 mt-20  border-brown border-t-2">
+          <div className="mb-12">
+            <div className="relative">
+              <img
+                src={office2}
+                alt="Kantor Banda Aceh"
+                className="w-full h-[600px] shadow-lg object-center"
+              />
+              <div className="absolute top-0 left-0 flex items-center gap-2 p-2 bg-white bg-opacity-75">
+                <MdLocationOn className="text-red-600" size={20} />
+                <span className="text-gray-700 font-semibold">
+                  Kantor Nagan Raya
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={nagan1}
+                alt="Meeting Room"
+                className="w-full h-[300px] object-cover shadow-lg mb-4"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                Resepsionis
+              </h3>
+              <p className="text-gray-600">
+                Meja Resepsionis dan Ruang Tunggu Klien/Pihak
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={nagan2}
+                alt="Ruang Kerja Advokat & Paralegal"
+                className="w-full h-[300px] object-cover shadow-lg mb-4"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                Ruang Kerja Advokat & Paralegal
+              </h3>
+              <p className="text-gray-600">
+                Menyiapkan dokumen hukum dan pekerjaan lainnya
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={nagan3}
+                alt="Meeting Room"
+                className="w-full h-[300px] object-cover shadow-lg mb-4"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                Ruang Kerja ADV
+              </h3>
+              <p className="text-gray-600">Layanan konsultasi hukum</p>
+            </div>
+
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={nagan4}
+                alt="Ruang Kerja Advokat & Paralegal"
+                className="w-full h-[300px] object-cover shadow-lg mb-4"
+              />
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                Ruang Kerja Ketua
+              </h3>
+              <p className="text-gray-600">
+                Ruang Kerja Ketua LKBH SATA Alfaqih
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about7"
+        className="bg-primarywhite py-12 md:py-24 px-8 md:px-16"
+      >
+        <p className="font-Cinzel font-bold text-2xl md:text-3xl lg:text-4xl text-center text-brown py-4 md:py-6">
+          Dokumentasi Kegiatan
+        </p>
+        <p className="font-Lato font-light text-base md:text-lg text-justify md:text-black mt-5 md:mt-10 list-disc list-inside">
+          Berikut merupakan dokumentasi kegiatan LKBH Sata Al Faqih, yang
+          mencatat setiap aktivitas organisasi dengan lengkap dan terstruktur.
+          Dokumentasi ini membantu memastikan semua kegiatan terdokumentasi
+          dengan baik dan mudah diakses kapan saja.
+        </p>
+
+        <div className="mt-10 flex justify-center">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {data.map(({ imageLink, description }, index) => (
+              <div key={index} className="relative overflow-hidden group">
+                <img
+                  className="h-80 w-full max-w-full object-cover object-center transform transition-transform duration-500 group-hover:scale-105"
+                  src={imageLink}
+                  alt="gallery-photo"
+                />
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 flex items-center justify-center text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-Lato">
+                  {description}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

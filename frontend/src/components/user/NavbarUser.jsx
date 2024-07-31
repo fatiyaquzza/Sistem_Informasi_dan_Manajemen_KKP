@@ -35,7 +35,7 @@ const NavbarUser = () => {
         <Link to="/" className={`text-xl font-Cinzel font-bold ${navText}`}>
           LKBH Sata Al-Faqih
         </Link>
-        <div className="md:hidden" onClick={toggleNav}>
+        <div className="lg:hidden" onClick={toggleNav}>
           <svg
             className={`w-6 h-6 cursor-pointer ${navText}`}
             fill="none"
@@ -51,7 +51,7 @@ const NavbarUser = () => {
             ></path>
           </svg>
         </div>
-        <div className="hidden md:flex space-x-8 font-Lato font-semibold">
+        <div className="hidden lg:flex space-x-8 font-Lato font-semibold">
           <Link to="/" className={`hover:text-gray-500 ${navText}`}>
             Beranda
           </Link>
@@ -73,7 +73,7 @@ const NavbarUser = () => {
         </div>
       </div>
       <div
-        className={`md:hidden ${
+        className={`lg:hidden ${
           navOpen ? "block" : "hidden"
         } bg-white shadow-md`}
       >

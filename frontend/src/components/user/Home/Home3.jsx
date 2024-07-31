@@ -19,10 +19,10 @@ const Home3 = () => {
 
       <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full pb-8">
         <p className="font-Lato font-bold text-white text-md mb-2 px-8 pt-8 md:px-12">
-          Civil Law
+          Litigasi
         </p>
         <p className="font-Lato px-8 md:px-12 text-white font-light text-md text-justify mb-8">
-        Civil law governs disputes between individuals or organizations, focusing on resolving issues such as contracts, property, and family matters.
+        Litigasi adalah proses hukum formal yang digunakan untuk menyelesaikan perselisihan melalui pengadilan. Dalam proses ini, serangkaian prosedur diawasi oleh hakim atau majelis hakim, di mana pihak-pihak yang bersengketa menyajikan argumen, bukti, dan saksi untuk mendukung posisi mereka.
         </p>
         <div className="flex justify-center">
           <img src={home3_1} alt="Hukum Pidana" className="w-[300px] h-[260px] md:w-[400px] md:h-[300px]" />
@@ -34,10 +34,10 @@ const Home3 = () => {
     <div className="w-full md:w-1/2 md:ml-10">
       <div className="bg-brown shadow-lg hover:shadow-sm hover:bg-opacity-90 w-full py-8 items-center mt-0 md:mt-2">
         <p className="font-Lato font-bold text-white text-md mb-2 pl-8 pt-0 md:pt-8 md:pl-12">
-        Criminal Law
+        Non Litigasi
         </p>
         <p className="font-Lato pl-8 md:pl-12 pr-8 md:pr-12 text-white font-light text-md text-justify mb-8">
-        Criminal law deals with offenses against the state, establishing legal penalties for actions that harm public safety and order.
+        Non-litigasi mencakup berbagai teknik seperti negosiasi, mediasi, dan arbitrase, yang semuanya bertujuan untuk mencapai kesepakatan yang saling menguntungkan tanpa perlu melalui proses pengadilan yang panjang dan kompleks.
         </p>
         <div className="flex justify-center px-8 md:px-12">
           <img src={home3_3} alt="Hukum Perdata" className="w-[300px] h-[260px] md:w-[400px] md:h-[300px]" />
