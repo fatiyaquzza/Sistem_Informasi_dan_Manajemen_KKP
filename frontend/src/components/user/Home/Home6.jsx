@@ -7,7 +7,7 @@ const Home6 = () => {
     {
       question: "Bagaimana cara mengajukan permohonan bantuan hukum?",
       answer:
-        "Anda bisa mengajukan permohonan bantuan hukum dengan mengunjungi kantor kami secara langsung.",
+        "Anda bisa mengajukan permohonan bantuan hukum dengan mengunjungi kantor kami secara langsung dan membawa surat keterangan kurang mampu dari kepala desa.",
     },
     {
       question:

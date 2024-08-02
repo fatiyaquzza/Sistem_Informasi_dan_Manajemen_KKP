@@ -33,7 +33,7 @@ const Home2 = () => {
         className="mx-auto mb-4 w-16 h-16 mt-4 transition-transform duration-300"
       />
       <h4 className="text-xl font-semibold mb-2 italic">2019</h4>
-      <p className="opacity-70 mb-4">Established</p>
+      <p className="opacity-70 mb-4">Didirikan Sejak</p>
     </div>
 
     {/* Lawyers card */}
@@ -43,8 +43,8 @@ const Home2 = () => {
         alt="Lawyers"
         className="mx-auto mb-4 w-16 h-16 mt-4 transition-transform duration-300"
       />
-      <h4 className="text-xl font-semibold mb-2 italic">15</h4>
-      <p className="opacity-70 mb-4">Lawyers</p>
+      <h4 className="text-xl font-semibold mb-2 italic">Lebih Dari 100</h4>
+      <p className="opacity-70 mb-4">Kasus</p>
     </div>
 
     {/* Branches card */}
@@ -59,7 +59,7 @@ const Home2 = () => {
     </div>
 
     {/* Clients card */}
-    <div className="bg-white p-6 px-12 shadow-lg transition-colors duration-300 hover:bg-brown hover:text-white group">
+    {/* <div className="bg-white p-6 px-12 shadow-lg transition-colors duration-300 hover:bg-brown hover:text-white group">
       <img
         src={Clients}
         alt="Clients"
@@ -67,10 +67,10 @@ const Home2 = () => {
       />
       <h4 className="text-xl font-semibold mb-2 italic">210603</h4>
       <p className="opacity-70 mb-4">Clients</p>
-    </div>
+    </div> */}
 
     {/* Support Team card */}
-    <div className="bg-white p-6 px-12 shadow-lg transition-colors duration-300 hover:bg-brown hover:text-white group">
+    {/* <div className="bg-white p-6 px-12 shadow-lg transition-colors duration-300 hover:bg-brown hover:text-white group">
       <img
         src={SupportTeam}
         alt="Support Team"
@@ -78,7 +78,7 @@ const Home2 = () => {
       />
       <h4 className="text-xl font-semibold mb-2 italic">70</h4>
       <p className="opacity-70 mb-4">Support Team</p>
-    </div>
+    </div> */}
   </div>
 
       </section>

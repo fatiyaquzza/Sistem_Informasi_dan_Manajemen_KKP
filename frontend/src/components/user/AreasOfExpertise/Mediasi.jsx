@@ -71,7 +71,7 @@ const Mediasi = () => {
             untuk membantu pihak-pihak menemukan titik temu dan menyusun
             kesepakatan yang dapat diterima bersama.
           </p>
-          <h2 className="text-3xl font-semibold mb-4 font-Cinzel text-brown mt-20">
+          {/* <h2 className="text-3xl font-semibold mb-4 font-Cinzel text-brown mt-20">
             CAKUPAN
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
@@ -93,7 +93,7 @@ const Mediasi = () => {
             <div className="bg-transparent border-solid border-2 border-brown p-4 shadow-md text-center">
               <p className="text-lg">Hukum Keluarga</p>
             </div>
-          </div>
+          </div> */}
           <h2 className="text-3xl font-semibold mb-4 font-Cinzel text-brown mt-20">
             TOTAL KASUS
           </h2>
@@ -101,7 +101,7 @@ const Mediasi = () => {
             <div className="flex flex-col items-center">
               <FaBalanceScale className="w-20 h-20 text-brown p-2 mb-4" />
               <p className="text-4xl font-Cinzel font-semibold text-brown mb-2">
-                120 Kasus
+              +-30 Kasus
               </p>
               <p className="text-lg">
                 Kami telah berhasil menyelesaikan sejumlah besar kasus litigasi

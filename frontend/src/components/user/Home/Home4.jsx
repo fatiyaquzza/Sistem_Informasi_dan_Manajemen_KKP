@@ -68,7 +68,7 @@ const Home4 = () => {
           to="/cases"
           className="border-solid border-2 border-brown hover:border-brown hover:text-brown hover:bg-transparent bg-brown text-white text-sm font-semibold py-3 px-6 xl:px-12"
         >
-          See All Cases
+          Selengkapnya
         </Link>
       </div>
     </div>

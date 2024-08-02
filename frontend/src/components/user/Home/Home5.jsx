@@ -45,7 +45,7 @@ const Home5 = () => {
             to="/team"
             className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6"
           >
-            View All Team Members
+            Selengkapnya
           </Link>
         </div>
       </section>

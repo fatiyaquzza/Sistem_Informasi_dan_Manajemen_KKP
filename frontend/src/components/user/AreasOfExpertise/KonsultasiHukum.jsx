@@ -49,7 +49,7 @@ const KonsultasiHukum = () => {
           <p className="text-justify text-lg mb-6">
           Salah satu keuntungan utama dari konsultasi hukum adalah bahwa klien mendapatkan pemahaman yang lebih baik tentang situasi hukum mereka dan opsi-opsi yang tersedia. Hal ini memungkinkan mereka untuk membuat keputusan yang lebih bijaksana dan strategis. Konsultasi hukum juga membantu klien menghindari kesalahan yang dapat memperburuk masalah hukum mereka atau menyebabkan kerugian lebih lanjut.
           </p>
-          <h2 className="text-3xl font-semibold mb-4 font-Cinzel text-brown mt-20">CAKUPAN</h2>
+          {/* <h2 className="text-3xl font-semibold mb-4 font-Cinzel text-brown mt-20">CAKUPAN</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <div className="bg-transparent border-solid border-2 border-brown p-4 shadow-md text-center">
               <p className="text-lg">Hukum Pidana</p>
@@ -69,12 +69,12 @@ const KonsultasiHukum = () => {
             <div className="bg-transparent border-solid border-2 border-brown p-4 shadow-md text-center">
               <p className="text-lg">Hukum Keluarga</p>
             </div>
-          </div>
+          </div> */}
           <h2 className="text-3xl font-semibold mb-4 font-Cinzel text-brown mt-20">TOTAL KASUS</h2>
           <div className=" bg-primarywhite p-6 shadow-md text-center">
             <div className="flex flex-col items-center">
               <FaBalanceScale className="w-20 h-20 text-brown p-2 mb-4" />
-              <p className="text-4xl font-Cinzel font-semibold text-brown mb-2">120 Kasus</p>
+              <p className="text-4xl font-Cinzel font-semibold text-brown mb-2">+-30 Kasus</p>
               <p className="text-lg">Kami telah berhasil menyelesaikan sejumlah besar kasus litigasi dengan efisiensi dan keadilan.</p>
             </div>
           </div>

@@ -51,7 +51,7 @@ const Home3 = () => {
       to="/expertise"
       className="border-solid border-2 border-brown text-brown bg-transparent hover:bg-brown hover:text-white text-sm font-semibold py-3 px-6"
     >
-      See All Practice Area
+      Selengkapnya
     </Link>
   </div>
 </section>
