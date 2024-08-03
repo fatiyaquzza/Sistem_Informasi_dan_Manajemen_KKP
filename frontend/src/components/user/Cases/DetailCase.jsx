@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCaseById } from "../../../service/CaseService";
-import { FaUser } from "react-icons/fa";
 
 const DetailCase = () => {
   const { id } = useParams();
@@ -12,13 +11,7 @@ const DetailCase = () => {
     const fetchCase = async () => {
       try {
         const data = await getCaseById(id);
-
-        // Uraikan JSON string jika diperlukan
-        const caseWithParsedMembers = {
-          ...data,
-          teamMembers: JSON.parse(data.teamMembers || "[]") // Uraikan JSON string
-        };
-        setCaseItem(caseWithParsedMembers);
+        setCaseItem(data);
       } catch (error) {
         console.error("Error fetching case:", error);
       }
@@ -28,7 +21,11 @@ const DetailCase = () => {
   }, [id]);
 
   if (!caseItem) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen text-2xl">
+        Loading...
+      </div>
+    );
   }
 
   const formatDate = (dateString) => {
@@ -36,28 +33,14 @@ const DetailCase = () => {
     return new Date(dateString).toLocaleDateString("id-ID", options);
   };
 
-  const renderMember = (member, index) => {
-    if (member) {
-      return (
-        <div key={index} className="mt-2 p-2 w-full lg:w-[300px] text-white flex items-center border-solid border-brown border-2">
-          <FaUser className="mr-2 w-12 h-12 bg-brown p-2" /> {/* Ikon pengguna */}
-          <div className="text-brown font-semibold pl-1 capitalize">
-            {member}
-          </div>
-        </div>
-      );
-    }
-    return null;
-  };
-
   return (
     <>
-      <section className="relative h-screen flex flex-col items-center justify-center bg-black font-Lato">
-        <div className="relative z-10 text-center text-white p-4 md:p-8 mx-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl pb-10 py-4 md:py-8 lg:py-10 border-white">
+      <section className="relative h-screen flex flex-col items-center justify-center bg-black text-white font-Lato">
+        <div className="relative z-10 text-center p-4 md:p-8 mx-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl pb-10 py-4 md:py-8 lg:py-10 border-b-2 border-white">
             Case
           </h1>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl bg-black2 font-bold border-2 border-solid px-10 py-5 md:px-20 md:py-10 border-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl bg-black2 font-bold border-2 border-solid px-10 py-5 md:px-20 md:py-10 border-white shadow-lg">
             {caseItem.caseName}
           </h1>
         </div>
@@ -83,33 +66,36 @@ const DetailCase = () => {
 
       <section
         id="section2"
-        className="bg-primarywhite text-black px-12 6 py-12 md:py-24 font-Lato"
+        className="bg-primarywhite text-black px-6 md:px-12 py-12 md:py-24 font-Lato"
       >
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/4 pr-0 md:pr-10 mb-10 md:mb-0">
-            <p className="font-semibold">Last Updated:</p>
-            <p>{formatDate(caseItem.caseDate)}</p>
-
-            <p className="mt-5 font-semibold">Members:</p>
-            {caseItem.teamMembers.length > 0 ? (
-              caseItem.teamMembers.map((member, index) => renderMember(member, index + 1))
-            ) : (
-              <p>No members</p>
-            )}
+            <p className="font-semibold text-lg mb-2">Last Updated:</p>
+            <p className="text-gray-700">{formatDate(caseItem.caseDate)}</p>
           </div>
           <div className="w-full lg:w-3/4 text-justify">
-            <h2 className="text-3xl font-semibold">Background</h2>
-            <p className="mt-4">{caseItem.caseAbout}</p>
-            <h2 className="text-3xl font-semibold mt-10">Actions Taken</h2>
-            <p className="mt-4">{caseItem.caseAction}</p>
-            <h2 className="text-3xl font-semibold mt-10">Outcome</h2>
-            <p className="mt-4">{caseItem.caseOutcome}</p>
+            <h2 className="text-3xl font-semibold mb-6">Background</h2>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              {caseItem.caseAbout}
+            </p>
+            <h2 className="text-3xl font-semibold mt-10 mb-6">Actions Taken</h2>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              {caseItem.caseAction}
+            </p>
+            <h2 className="text-3xl font-semibold mt-10 mb-6">Outcome</h2>
+            <div className="mt-4">
+              <iframe
+                src={caseItem.url}
+                title="Case PDF"
+                className="w-full h-[400px] md:h-[600px] border-2 border-solid border-gray-300 shadow-md"
+              ></iframe>
+            </div>
           </div>
         </div>
-        <div className="mt-10 flex justify-end">
+        <div className="mt-10 flex justify-center">
           <button
             onClick={() => navigate("/cases")}
-            className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-5 py-3 hover:bg-transparent hover:text-brown transition"
+            className="mt-6 border-2 border-brown border-solid bg-brown text-white text-sm font-semibold mb-2 px-5 py-3 hover:bg-transparent hover:text-brown transition duration-300 ease-in-out"
           >
             Kembali ke Berita & Artikel
           </button>

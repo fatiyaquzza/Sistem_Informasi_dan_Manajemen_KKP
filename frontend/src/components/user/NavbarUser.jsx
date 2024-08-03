@@ -51,7 +51,7 @@ const NavbarUser = () => {
             ></path>
           </svg>
         </div>
-        <div className="hidden lg:flex space-x-8 font-Lato font-semibold">
+        <div className="hidden lg:flex space-x-6  font-Lato font-semibold">
           <Link to="/" className={`hover:text-gray-500 ${navText}`}>
             Beranda
           </Link>
