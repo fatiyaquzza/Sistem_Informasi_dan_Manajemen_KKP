@@ -7,52 +7,26 @@ const AddCase = () => {
   const [caseDate, setcaseDate] = useState("");
   const [caseAbout, setcaseAbout] = useState("");
   const [caseAction, setcaseAction] = useState("");
-  const [caseOutcome, setcaseOutcome] = useState("");
-  const [lawyers, setLawyers] = useState([]);
-  const [teamMembers, setTeamMembers] = useState([{ lawyerId: "" }]);
+  const [file, setFile] = useState(null);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Fetch lawyers from server
-    const fetchLawyers = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/lawyers");
-        setLawyers(response.data);
-      } catch (error) {
-        console.error("Error fetching lawyers:", error);
-      }
-    };
-    fetchLawyers();
-  }, []);
-
-  const addTeamMember = () => {
-    setTeamMembers([...teamMembers, { lawyerId: "" }]);
-  };
-
-  const removeTeamMember = (index) => {
-    const newTeamMembers = teamMembers.filter((_, i) => i !== index);
-    setTeamMembers(newTeamMembers);
-  };
-
-  const handleTeamMemberChange = (index, name) => {
-    const newTeamMembers = [...teamMembers];
-    newTeamMembers[index] = { name }; // Menyimpan nama pengacara
-    setTeamMembers(newTeamMembers);
-  };
-  
+    
   const saveCase = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("caseName", caseName);
+    formData.append("caseDate", caseDate);
+    formData.append("caseAbout", caseAbout);
+    formData.append("caseAction", caseAction);
+    formData.append("file", file);
+    // console.log(file);
     try {
-      const caseData = {
-        caseName,
-        caseDate,
-        caseAbout,
-        caseAction,
-        caseOutcome,
-        teamMembers: teamMembers.map((member) => member.name)
-      };
-      await axios.post("http://localhost:5000/admin-cases", caseData);
+      await axios.post("http://localhost:5000/admin-cases", formData, {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+      });
       navigate("/caseList");
     } catch (error) {
       console.error("Error saving case:", error);
@@ -114,52 +88,17 @@ const AddCase = () => {
           ></textarea>
         </div>
         <div className="mb-4">
-          <label htmlFor="caseOutcome" className="block text-gray-700 font-bold mb-2">
-            Outcome
+          <label htmlFor="file" className="block text-gray-700 font-bold mb-2">
+            PDF
           </label>
-          <textarea
-            id="caseOutcome"
-            value={caseOutcome}
+          <input
+            id="file"
+            type="file"
             required
-            onChange={(e) => setcaseOutcome(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
-          ></textarea>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="teamMembers" className="block text-gray-700 font-bold mb-2">
-            Team Members
-          </label>
-          {teamMembers.map((member, index) => (
-            <div key={index} className="flex items-center mb-2">
-              <select
-  value={member.name}
-  onChange={(e) => handleTeamMemberChange(index, e.target.value)}
-  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
->
-  <option value="">Select a lawyer</option>
-  {lawyers.map((lawyer) => (
-    <option key={lawyer.id} value={lawyer.name}> {/* Menyimpan nama pengacara */}
-      {lawyer.name}
-    </option>
-  ))}
-</select>
-              <button
-                type="button"
-                onClick={() => removeTeamMember(index)}
-                className="ml-2 text-red-500 hover:text-red-700"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={addTeamMember}
-            className="text-blue-500 hover:text-blue-700"
-          >
-            Add Member
-          </button>
-        </div>
+            onChange={(e) => setFile(e.target.files[0])}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+          />
+          </div>
         <div className="flex items-center justify-center">
           <button
             type="submit"

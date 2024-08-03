@@ -7,7 +7,6 @@ import Authrouter from "./routes/AuthRoute.js";
 import bodyParser from "body-parser";
 import db from "./config/database.js";
 import SequelizeStore from "connect-session-sequelize";
-import cron from "node-cron";
 import Lawyerrouter from "./routes/LawyerRoute.js";
 import Caserouter from "./routes/CaseRoute.js";
 import fileUpload from "express-fileupload";
@@ -51,6 +50,8 @@ app.use(
 );
 app.use(fileUpload());
 app.use("/images", express.static(path.join(__dirname, "public/images")));
+app.use("/files", express.static(path.join(__dirname, "public/files")));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

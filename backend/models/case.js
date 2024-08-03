@@ -18,13 +18,14 @@ const Case = db.define('Cases', {
     caseAction: {
         type: DataTypes.TEXT
     },
-    caseOutcome: {
-        type: DataTypes.TEXT
+    pdf: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    teamMembers: {
-        type: DataTypes.JSON, // You can also use DataTypes.STRING to store a comma-separated list of IDs
-        allowNull: false
-    }
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 }, {
     freezeTableName: true
 });
