@@ -41,20 +41,6 @@ export const createCase = async (req, res) => {
       res.status(500).json({ msg: "Failed to create Case" });
     }
   });
-  // try {
-  //   const { caseName, caseDate, caseAbout, caseAction, caseOutcome, teamMembers } = req.body;
-  //   const newCase = await Case.create({
-  //     caseName,
-  //     caseDate,
-  //     caseAbout,
-  //     caseAction,
-  //     caseOutcome,
-  //     teamMembers // Menyimpan nama pengacara
-  //   });
-  //   res.status(201).json(newCase);
-  // } catch (error) {
-  //   res.status(500).json({ message: error.message });
-  // }
 };
 
 // Get all cases with team members
@@ -82,36 +68,50 @@ export const getCaseById = async (req, res) => {
 
 export const updateCase = async (req, res) => {
   try {
-    const {
-      caseName,
-      caseDate,
-      caseAbout,
-      caseAction,
-      caseOutcome,
-      caseMember1,
-      caseMember2,
-      caseMember3,
-      caseMember4,
-      caseMember5,
-    } = req.body;
-    const casee = await Case.findByPk(req.params.id);
-    if (casee) {
-      casee.caseName = caseName;
-      casee.caseDate = caseDate;
-      casee.caseAbout = caseAbout;
-      casee.caseAction = caseAction;
-      casee.caseOutcome = caseOutcome;
-      casee.caseMember1 = caseMember1;
-      casee.caseMember2 = caseMember2;
-      casee.caseMember3 = caseMember3;
-      casee.caseMember4 = caseMember4;
-      casee.caseMember5 = caseMember5;
+    const { id } = req.params;
+    const { caseName, caseDate, caseAbout, caseAction } = req.body;
 
-      await casee.save();
-      res.status(200).json(casee);
-    } else {
-      res.status(404).json({ message: "Case not found" });
+    const article = await Case.findByPk(id);
+    if (!article) return res.status(404).json({ message: "article not found" });
+
+    if (req.files && req.files.file) {
+      const file = req.files.file;
+      const fileSize = file.data.length;
+      const ext = path.extname(file.name);
+      const fileName = file.md5 + ext;
+      const url = `${req.protocol}://${req.get("host")}/files/${fileName}`;
+      const allowedType = [".pdf"];
+
+      if (!allowedType.includes(ext.toLowerCase()))
+        return res.status(422).json({ msg: "Invalid PDF" });
+      if (fileSize > 20000000)
+        return res.status(422).json({ msg: "PDF must be less than 20 MB" });
+
+      const dir = "./public/files";
+
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+
+      if (article.pdf) {
+        fs.unlinkSync(path.join(dir, article.pdf));
+      }
+
+      file.mv(`${dir}/${fileName}`, async (err) => {
+        if (err) return res.status(500).json({ msg: err.message });
+      });
+
+      article.pdf = fileName;
+      article.url = url;
     }
+
+    article.caseName = caseName;
+    article.caseDate = caseDate;
+    article.caseAbout = caseAbout;
+    article.caseAction = caseAction;
+    await article.save();
+
+    res.status(200).json({ msg: "article updated successfully", article });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

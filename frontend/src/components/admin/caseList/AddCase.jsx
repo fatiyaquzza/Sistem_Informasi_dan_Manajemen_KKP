@@ -94,6 +94,7 @@ const AddCase = () => {
           <input
             id="file"
             type="file"
+            accept="application/pdf"
             required
             onChange={(e) => setFile(e.target.files[0])}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50"

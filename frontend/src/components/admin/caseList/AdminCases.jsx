@@ -14,19 +14,13 @@ const AdminCases = () => {
   const getCases = async () => {
     try {
       const response = await axios.get("http://localhost:5000/admin-cases");
-      // Parsing JSON string jika diperlukan
-      const casesWithParsedMembers = response.data.map(casee => ({
-        ...casee,
-        teamMembers: JSON.parse(casee.teamMembers) // Uraikan JSON string
-      }));
-      setCases(casesWithParsedMembers);
+      setCases(response.data);
     } catch (error) {
       console.error("Error fetching cases:", error);
     }
   };
-  
 
-  const deleteLawyer = async (id) => {
+  const deleteCase = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/admin-cases/${id}`);
       getCases();
@@ -41,66 +35,68 @@ const AdminCases = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 font-Poppins">
-      <h1 className="text-3xl font-bold mb-4">Manage Cases</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8">Manage Cases</h1>
       <Link
         to="/admin-cases/add"
-        className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded inline-block mb-4"
+        className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded inline-block mb-6"
       >
         Add New Case
       </Link>
-      <table className="min-w-full bg-white border shadow-sm rounded">
-        <thead>
-          <tr className="bg-gray-200 text-center">
-            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
-              No
-            </th>
-            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
-              Name
-            </th>
-            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
-              Date
-            </th>
-            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
-              Team Members
-            </th>
-            <th className="border px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase">
-              Actions
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-  {cases.map((casee, index) => (
-    <tr key={casee.id} className="mx-auto text-center">
-      <td className="border px-6 py-4">{index + 1}</td>
-      <td className="border px-6 py-4">{casee.caseName}</td>
-      <td className="border px-6 py-4">{formatDate(casee.caseDate)}</td>
-      <td className="border px-6 py-4">
-        {Array.isArray(casee.teamMembers) && casee.teamMembers.length > 0
-          ? casee.teamMembers.join(", ")
-          : "No members"}
-      </td>
-      <td className="border px-6 py-4">
-        <div className="flex justify-between">
-          <Link
-            to={`/admin-cases/edit/${casee.id}`}
-            className="hover:text-blue-500 hover:bg-white border-blue-500 border-2 border-solid p-2 rounded bg-blue-500 text-white"
-          >
-            <FontAwesomeIcon icon={faEdit} /> &nbsp; Edit
-          </Link>
-          <button
-            onClick={() => deleteLawyer(casee.id)}
-            className="hover:text-red-500 hover:bg-white border-red-500 border-2 border-solid p-2 rounded bg-red-500 text-white"
-          >
-            <FontAwesomeIcon icon={faTrash} /> &nbsp; Delete
-          </button>
-        </div>
-      </td>
-    </tr>
-  ))}
-</tbody>
-
-      </table>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border shadow-md rounded-lg overflow-hidden">
+          <thead>
+            <tr className="bg-gray-200 text-left text-sm font-semibold text-gray-700">
+              <th className="border px-6 py-3">No</th>
+              <th className="border px-6 py-3">Name</th>
+              <th className="border px-6 py-3">Date</th>
+              <th className="border px-6 py-3">About</th>
+              <th className="border px-6 py-3">Action</th>
+              <th className="border px-6 py-3">URL</th>
+              <th className="border px-6 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cases.map((casee, index) => (
+              <tr key={casee.id} className="hover:bg-gray-100">
+                <td className="border px-6 py-4">{index + 1}</td>
+                <td className="border px-6 py-4">{casee.caseName}</td>
+                <td className="border px-6 py-4">
+                  {formatDate(casee.caseDate)}
+                </td>
+                <td className="border px-6 py-4">{casee.caseAbout}</td>
+                <td className="border px-6 py-4">{casee.caseAction}</td>
+                <td className="border px-6 py-4">
+                  <a
+                    href={casee.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    View PDF
+                  </a>
+                </td>
+                <td className="border px-6 py-4">
+                  <div className="flex space-x-2">
+                    <Link
+                      to={`/admin-cases/edit/${casee.id}`}
+                      className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+                    >
+                      <FontAwesomeIcon icon={faEdit} /> Edit
+                    </Link>
+                    <button
+                      onClick={() => deleteCase(casee.id)}
+                      className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+                    >
+                      <FontAwesomeIcon icon={faTrash} /> Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
