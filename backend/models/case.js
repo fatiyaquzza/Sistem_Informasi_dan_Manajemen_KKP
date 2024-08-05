@@ -15,9 +15,6 @@ const Case = db.define('Cases', {
     caseAbout: {
         type: DataTypes.TEXT
     },
-    caseAction: {
-        type: DataTypes.TEXT
-    },
     pdf: {
       type: DataTypes.STRING,
       allowNull: false,

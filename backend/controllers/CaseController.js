@@ -5,7 +5,7 @@ import fs from "fs";
 export const createCase = async (req, res) => {
   if (req.files === null)
     return res.status(400).json({ msg: "No File Uploaded" });
-  const { caseName, caseDate, caseAbout, caseAction } = req.body;
+  const { caseName, caseDate, caseAbout } = req.body;
   const file = req.files.file;
   const fileSize = file.data.length;
   const ext = path.extname(file.name);
@@ -31,7 +31,6 @@ export const createCase = async (req, res) => {
         caseName: caseName,
         caseDate: caseDate,
         caseAbout: caseAbout,
-        caseAction: caseAction,
         pdf: fileName,
         url: url,
       });
@@ -69,7 +68,7 @@ export const getCaseById = async (req, res) => {
 export const updateCase = async (req, res) => {
   try {
     const { id } = req.params;
-    const { caseName, caseDate, caseAbout, caseAction } = req.body;
+    const { caseName, caseDate, caseAbout } = req.body;
 
     const article = await Case.findByPk(id);
     if (!article) return res.status(404).json({ message: "article not found" });
@@ -108,7 +107,6 @@ export const updateCase = async (req, res) => {
     article.caseName = caseName;
     article.caseDate = caseDate;
     article.caseAbout = caseAbout;
-    article.caseAction = caseAction;
     await article.save();
 
     res.status(200).json({ msg: "article updated successfully", article });

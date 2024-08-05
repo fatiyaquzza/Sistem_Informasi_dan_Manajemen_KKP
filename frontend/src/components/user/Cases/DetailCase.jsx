@@ -74,15 +74,11 @@ const DetailCase = () => {
             <p className="text-gray-700">{formatDate(caseItem.caseDate)}</p>
           </div>
           <div className="w-full lg:w-3/4 text-justify">
-            <h2 className="text-3xl font-semibold mb-6">Background</h2>
+            <h2 className="text-3xl font-semibold mb-6">Abstract</h2>
             <p className="mt-4 text-gray-700 leading-relaxed">
               {caseItem.caseAbout}
             </p>
-            <h2 className="text-3xl font-semibold mt-10 mb-6">Actions Taken</h2>
-            <p className="mt-4 text-gray-700 leading-relaxed">
-              {caseItem.caseAction}
-            </p>
-            <h2 className="text-3xl font-semibold mt-10 mb-6">Outcome</h2>
+            <h2 className="text-3xl font-semibold mt-10 mb-6">Artikel Lengkap</h2>
             <div className="mt-4">
               <iframe
                 src={caseItem.url}

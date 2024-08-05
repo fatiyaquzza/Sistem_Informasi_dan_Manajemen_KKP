@@ -6,7 +6,6 @@ const AddCase = () => {
   const [caseName, setcaseName] = useState("");
   const [caseDate, setcaseDate] = useState("");
   const [caseAbout, setcaseAbout] = useState("");
-  const [caseAction, setcaseAction] = useState("");
   const [file, setFile] = useState(null);
 
   const navigate = useNavigate();
@@ -18,7 +17,6 @@ const AddCase = () => {
     formData.append("caseName", caseName);
     formData.append("caseDate", caseDate);
     formData.append("caseAbout", caseAbout);
-    formData.append("caseAction", caseAction);
     formData.append("file", file);
     // console.log(file);
     try {
@@ -72,18 +70,6 @@ const AddCase = () => {
             value={caseAbout}
             required
             onChange={(e) => setcaseAbout(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
-          ></textarea>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="caseAction" className="block text-gray-700 font-bold mb-2">
-            Action
-          </label>
-          <textarea
-            id="caseAction"
-            value={caseAction}
-            required
-            onChange={(e) => setcaseAction(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>

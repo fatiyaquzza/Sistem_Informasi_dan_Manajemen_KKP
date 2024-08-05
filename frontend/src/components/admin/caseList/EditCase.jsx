@@ -7,7 +7,6 @@ const EditCase = () => {
   const [caseName, setCaseName] = useState("");
   const [caseDate, setCaseDate] = useState("");
   const [caseAbout, setCaseAbout] = useState("");
-  const [caseAction, setCaseAction] = useState("");
   const [file, setFile] = useState(null);
   const [existingFile, setExistingFile] = useState("");
   const { id } = useParams();
@@ -29,7 +28,6 @@ const EditCase = () => {
       setCaseName(caseData.caseName);
       setCaseDate(caseDateFormatted);
       setCaseAbout(caseData.caseAbout);
-      setCaseAction(caseData.caseAction);
       setExistingFile(caseData.url);
     } catch (error) {
       console.error("Error fetching case data:", error);
@@ -44,7 +42,6 @@ const EditCase = () => {
     formData.append("caseName", caseName);
     formData.append("caseDate", caseDateISO);
     formData.append("caseAbout", caseAbout);
-    formData.append("caseAction", caseAction);
     if (file) {
       formData.append("file", file);
     } else {
@@ -120,21 +117,6 @@ const EditCase = () => {
             value={caseAbout}
             required
             onChange={(e) => setCaseAbout(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
-          ></textarea>
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="caseAction"
-            className="block text-gray-700 font-bold mb-2"
-          >
-            Action
-          </label>
-          <textarea
-            id="caseAction"
-            value={caseAction}
-            required
-            onChange={(e) => setCaseAction(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500 bg-gray-50 h-32 resize-none"
           ></textarea>
         </div>

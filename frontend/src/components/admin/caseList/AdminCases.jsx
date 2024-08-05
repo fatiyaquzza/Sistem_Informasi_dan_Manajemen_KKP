@@ -51,7 +51,6 @@ const AdminCases = () => {
               <th className="border px-6 py-3">Name</th>
               <th className="border px-6 py-3">Date</th>
               <th className="border px-6 py-3">About</th>
-              <th className="border px-6 py-3">Action</th>
               <th className="border px-6 py-3">URL</th>
               <th className="border px-6 py-3">Actions</th>
             </tr>
@@ -65,7 +64,6 @@ const AdminCases = () => {
                   {formatDate(casee.caseDate)}
                 </td>
                 <td className="border px-6 py-4">{casee.caseAbout}</td>
-                <td className="border px-6 py-4">{casee.caseAction}</td>
                 <td className="border px-6 py-4">
                   <a
                     href={casee.url}
