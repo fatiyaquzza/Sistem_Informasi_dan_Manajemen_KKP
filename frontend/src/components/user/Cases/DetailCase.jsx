@@ -38,10 +38,10 @@ const DetailCase = () => {
       <section className="relative h-screen flex flex-col items-center justify-center bg-black text-white font-Lato">
         <div className="relative z-10 text-center p-4 md:p-8 mx-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl pb-10 py-4 md:py-8 lg:py-10 border-b-2 border-white">
-            Case
+            {/* Berita dan Artikel */}
           </h1>
           <h1 className="text-4xl md:text-5xl lg:text-6xl bg-black2 font-bold border-2 border-solid px-10 py-5 md:px-20 md:py-10 border-white shadow-lg">
-            {caseItem.caseName}
+          Detail Berita dan Artikel
           </h1>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
@@ -74,11 +74,15 @@ const DetailCase = () => {
             <p className="text-gray-700">{formatDate(caseItem.caseDate)}</p>
           </div>
           <div className="w-full lg:w-3/4 text-justify">
-            <h2 className="text-3xl font-semibold mb-6">Abstract</h2>
+          {/* <h2 className="text-3xl font-semibold mb-4">Judul</h2> */}
+            <p className="mt-4 text-2xl capitalize text-black font-semibold text-justify ">
+              {caseItem.caseName.toUpperCase()}
+            </p>
+            <h2 className="text-3xl font-semibold text-gray-700 mt-10 mb-4">Abstract</h2>
             <p className="mt-4 text-gray-700 leading-relaxed">
               {caseItem.caseAbout}
             </p>
-            <h2 className="text-3xl font-semibold mt-10 mb-6">Artikel Lengkap</h2>
+            <h2 className="text-3xl font-semibold text-gray-700 mt-10 mb-4">Artikel Lengkap</h2>
             <div className="mt-4">
               <iframe
                 src={caseItem.url}

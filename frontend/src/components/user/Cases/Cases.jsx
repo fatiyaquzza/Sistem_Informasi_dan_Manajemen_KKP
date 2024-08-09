@@ -15,7 +15,8 @@ const Cases = () => {
     const fetchCases = async () => {
       try {
         const data = await getCases();
-        setCases(data);
+        const sortedCases = data.sort((a, b) => new Date(b.caseDate) - new Date(a.caseDate));
+        setCases(sortedCases);
       } catch (error) {
         console.error("Error fetching cases:", error);
       }
@@ -61,7 +62,7 @@ const Cases = () => {
             BERITA & ARTIKEL
           </h1>
           <p className="text-base md:text-base lg:text-lg md:block hidden mt-4 md:mt-5 font-light">
-          Dapatkan informasi terbaru dan artikel penting mengenai hukum.
+            Dapatkan informasi terbaru dan artikel penting mengenai hukum.
           </p>
         </div>
         <div className="absolute bottom-10 w-full flex justify-center">
@@ -89,11 +90,13 @@ const Cases = () => {
         className="bg-primarywhite text-black px-16 py-12 md:py-24"
       >
         <p className="font-Cinzel font-light text-2xl md:text-4xl lg:text-5xl text-center border-b w-72 md:w-[800px] py-4 md:py-6 border-[#BCBCBC] mx-auto">
-        Kumpulan Berita dan 
+          Kumpulan Berita dan
           <span className="text-brown font-semibold"> Artikel</span>
         </p>
         <p className="font-Lato font-light text-lg text-center md:text-black hidden md:block mx-64 mt-10 md:mt-10">
-        Berikut adalah beberapa berita dan artikel terbaru yang mencerminkan perkembangan terkini dan wawasan mendalam kami dalam berbagai isu hukum
+          Berikut adalah beberapa berita dan artikel terbaru yang mencerminkan
+          perkembangan terkini dan wawasan mendalam kami dalam berbagai isu
+          hukum
         </p>
 
         <div className="mt-10 md:mt-16 relative">
@@ -121,7 +124,14 @@ const Cases = () => {
                     {formatDate(caseItem.caseDate)}
                   </div>
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
-                    {caseItem.caseName}
+                    {caseItem.caseName.length > 40
+                      ? `${caseItem.caseName
+                          .slice(0, 40)
+                          .toLowerCase()
+                          .replace(/\b\w/g, (char) => char.toUpperCase())}...`
+                      : caseItem.caseName
+                          .toLowerCase()
+                          .replace(/\b\w/g, (char) => char.toUpperCase())}
                   </h2>
                 </div>
                 <div className="p-6">
