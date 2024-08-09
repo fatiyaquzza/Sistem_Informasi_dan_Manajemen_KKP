@@ -33,7 +33,7 @@ const AddCase = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Add New Case</h1>
+      <h1 className="text-3xl font-bold mb-8">Add New Article</h1>
       <form onSubmit={saveCase} className="max-w-full p-10 shadow-md rounded bg-white">
         <div className="mb-4">
           <label htmlFor="caseName" className="block text-gray-700 font-bold mb-2">

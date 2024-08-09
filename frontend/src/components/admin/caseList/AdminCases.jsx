@@ -36,12 +36,12 @@ const AdminCases = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Manage Cases</h1>
+      <h1 className="text-3xl font-bold mb-8">Manage Articles</h1>
       <Link
         to="/admin-cases/add"
         className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded inline-block mb-6"
       >
-        Add New Case
+        Add New Article
       </Link>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border shadow-md rounded-lg overflow-hidden">
