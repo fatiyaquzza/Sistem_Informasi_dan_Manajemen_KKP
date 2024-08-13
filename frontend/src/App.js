@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./components/Login";
 import Users from "./pages/Users";
-import AddUser from "./pages/AddUser";
-import EditUser from "./pages/EditUser";
 import Forbidden from "./pages/Forbidden";
 import Navbar from "./components/admin/Navbar";
 import Home from "./components/user/Home/Home";
@@ -77,8 +75,6 @@ const Layout = ({ children }) => {
   const adminRoutes = [
     "/dashboard",
     "/users",
-    "/users/add",
-    "/users/edit/:id",
     "/forbidden",
     "/lawyers/add",
     "/lawyers/edit/:id",
@@ -165,7 +161,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path="/konsultasi-hukum"
           element={
             <Layout>
@@ -173,7 +169,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path="/mediasi"
           element={
             <Layout>
@@ -181,7 +177,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path="/non-litigasi"
           element={
             <Layout>
@@ -202,22 +198,6 @@ function App() {
           element={
             <Layout>
               <Users />
-            </Layout>
-          }
-        />
-        <Route
-          path="/users/add"
-          element={
-            <Layout>
-              <AddUser />
-            </Layout>
-          }
-        />
-        <Route
-          path="/users/edit/:id"
-          element={
-            <Layout>
-              <EditUser />
             </Layout>
           }
         />
