@@ -87,7 +87,7 @@ const DetailCase = () => {
               <iframe
                 src={caseItem.url}
                 title="Case PDF"
-                className="w-full h-[400px] md:h-[600px] border-2 border-solid border-gray-300 shadow-md"
+                className="w-full h-[400px] md:h-[450px] border-2 border-solid border-gray-300 shadow-md"
               ></iframe>
             </div>
           </div>

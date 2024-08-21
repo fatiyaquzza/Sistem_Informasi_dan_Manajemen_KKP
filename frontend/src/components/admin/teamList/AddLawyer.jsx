@@ -40,7 +40,7 @@ const AddLawyer = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Add New Lawyer</h1>
+      <h1 className="text-3xl font-bold mb-8">Add New Member</h1>
       <form
         onSubmit={saveLawyer}
         className="max-w-full p-10 shadow-md rounded bg-white"

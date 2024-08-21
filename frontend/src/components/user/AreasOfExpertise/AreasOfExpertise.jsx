@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import expertise from "../../../images/Expertise.png";
-import familyLaw from "../../../images/familyLaw.png";
-import civilRights from "../../../images/civilRights.png";
+import nonLi from "../../../images/litigation.png";
+import litigasi from "../../../images/civilRights.png";
+import konsultasi from "../../../images/konsultasi.png";
+import mediasi from "../../../images/mediasi.png";
+
 
 const AreasOfExpertise = () => {
   const specializations = [
-    { name: "Litigasi", image: familyLaw, link: "/litigasi" },
-    { name: "Non Litigasi", image: civilRights, link: "/non-litigasi" },
-    { name: "Konsultasi Hukum", image: familyLaw, link: "/konsultasi-hukum" },
-    { name: "Mediasi", image: civilRights, link: "/mediasi" },
+    { name: "Litigasi", image: litigasi, link: "/litigasi" },
+    { name: "Non Litigasi", image: nonLi, link: "/non-litigasi" },
+    { name: "Konsultasi Hukum", image: konsultasi, link: "/konsultasi-hukum" },
+    { name: "Mediasi", image: mediasi, link: "/mediasi" },
   ];
 
   return (
@@ -58,14 +61,14 @@ const AreasOfExpertise = () => {
       {specializations.map((specialization, index) => (
         <div
           key={index}
-          className="relative w-full shadow-md hover:shadow-2xl cursor-pointer group transform hover:-translate-y-2 transition duration-300 overflow-hidden"
+          className="relative w-full shadow-md hover:shadow-2xl cursor-pointer group transform hover:-translate-y-2 transition duration-300 overflow-hidden bg-black"
         >
           <Link to={specialization.link} className="block w-full h-full">
             <div className="relative">
               <img
                 src={specialization.image}
                 alt={specialization.name}
-                className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-300 group-hover:scale-105 opacity-50"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-4">

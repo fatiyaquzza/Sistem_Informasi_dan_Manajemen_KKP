@@ -23,7 +23,7 @@ const EditLawyer = () => {
       setPosition(response.data.position);
       setAbout(response.data.about);
       setDescription(response.data.description);
-      setPreview(response.data.image); // Assuming response includes image URL
+      setPreview(response.data.image); 
     } catch (error) {
       console.error("Error fetching lawyer data:", error);
     }
@@ -61,7 +61,7 @@ const EditLawyer = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Edit Lawyer</h1>
+      <h1 className="text-3xl font-bold mb-8">Edit Member</h1>
       <form onSubmit={updateLawyer} className="max-w-full p-10 shadow-md rounded bg-white">
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">

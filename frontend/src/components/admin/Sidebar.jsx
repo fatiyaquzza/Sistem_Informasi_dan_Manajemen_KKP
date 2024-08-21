@@ -37,7 +37,7 @@ const Sidebar = () => {
         <li>
           <Link to="/caseList" className="menu-item">
             <div className="flex items-center gap-2">
-              <IoDocument /> CaseList
+              <IoDocument /> Article List
             </div>
           </Link>
         </li>
@@ -45,7 +45,7 @@ const Sidebar = () => {
         <li>
           <Link to="/teamList" className="menu-item">
             <div className="flex items-center gap-2">
-              <IoPeople/> TeamList
+              <IoPeople/> Team List
             </div>
           </Link>
         </li>

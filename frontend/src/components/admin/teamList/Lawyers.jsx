@@ -32,12 +32,12 @@ const Lawyers = () => {
   return (
     <>
     <div className="container mx-auto px-4 py-8 font-Poppins">
-      <h1 className="text-3xl font-bold mb-4">Manage Lawyers</h1>
+      <h1 className="text-3xl font-bold mb-4">Manage Team</h1>
       <Link
         to="/lawyers/add"
         className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded inline-block mb-4"
       >
-        Add New Lawyer
+        Add New Member
       </Link>
       <table className="min-w-full bg-white border shadow-sm rounded">
         <thead>
