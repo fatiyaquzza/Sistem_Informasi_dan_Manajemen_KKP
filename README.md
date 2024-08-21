@@ -65,7 +65,5 @@ To set up this project locally, follow these steps:
 7. ```bash
    cd backend
    nodemon
-
-  ```bash
-  cd frontend
-  npm start
+   cd frontend
+   npm start
