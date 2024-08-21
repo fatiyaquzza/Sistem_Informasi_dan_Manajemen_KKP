@@ -69,10 +69,3 @@ To set up this project locally, follow these steps:
   ```bash
   cd frontend
   npm start
-
-Open http://localhost:3000 in your browser.
-
-
-
-
-
