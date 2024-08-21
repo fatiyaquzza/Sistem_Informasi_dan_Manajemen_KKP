@@ -53,17 +53,20 @@ To set up this project locally, follow these steps:
 
 3. **Configure environment variables:**
    Create a .env file in  the backend and specify the following variables:
+   ```bash
    APP_PORT=5000
    SESSION_SECRET=<your-session-key>
 
-4. **Start MySQL:**
+5. **Start MySQL:**
    Configure your MySQL database connection in the backend (located in config/Database.js).
    Create a database and run migrations if required.
 
-5. **Run the Project:**
+6. **Run the Project:**
+7. ```bash
    cd backend
    nodemon
 
+  ```bash
   cd frontend
   npm start
 
