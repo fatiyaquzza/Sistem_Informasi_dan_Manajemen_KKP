@@ -46,12 +46,13 @@ To set up this project locally, follow these steps:
    git clone https://github.com/fatiyaquzza/Sistem_Informasi_dan_Manajemen_KKP.git
 
 2. **Install dependencies for both the frontend and backend::**
+   ```bash
    cd backend
    npm install
    cd ../frontend
    npm install
 
-3. **Configure environment variables:**
+4. **Configure environment variables:**
    Create a .env file in  the backend and specify the following variables:
    ```bash
    APP_PORT=5000
