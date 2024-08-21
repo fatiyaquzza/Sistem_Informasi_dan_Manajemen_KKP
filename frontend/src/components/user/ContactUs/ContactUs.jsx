@@ -61,15 +61,9 @@ const ContactUs = () => {
               <span>9:00 AM - 5:00 PM</span>
             </div>
           </div>
-          <div className="bg-white shadow-md p-4 px-4 py-5 mb-4 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
-            <div className="flex justify-between text-sm md:text-base">
-              <span>Saturday</span>
-              <span>10:00 AM - 2:00 PM</span>
-            </div>
-          </div>
           <div className="bg-white shadow-md p-4 px-4 py-5 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-100">
             <div className="flex justify-between text-sm md:text-base">
-              <span className="text-red-500">Sunday</span>
+              <span className="text-red-500">Saturday-Sunday</span>
               <span className="text-red-500">Closed</span>
             </div>
           </div>
